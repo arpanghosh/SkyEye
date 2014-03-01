@@ -27,7 +27,6 @@
 		C578107618C2864A0018AFDF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107518C286490018AFDF /* libz.dylib */; };
 		C578107818C286550018AFDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107718C286550018AFDF /* MapKit.framework */; };
 		C578107A18C2865D0018AFDF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107918C2865D0018AFDF /* Security.framework */; };
-		C578109D18C29A6F0018AFDF /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578109918C29A370018AFDF /* FYX.framework */; };
 		C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AC18C29A9D0018AFDF /* Common.framework */; };
 		C57810BA18C29A9D0018AFDF /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AF18C29A9D0018AFDF /* ContextCore.framework */; };
 		C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B218C29A9D0018AFDF /* ContextLocation.framework */; };
@@ -72,17 +71,6 @@
 		C578107518C286490018AFDF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C578107718C286550018AFDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C578107918C2865D0018AFDF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		C578109018C29A370018AFDF /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
-		C578109318C29A370018AFDF /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
-		C578109618C29A370018AFDF /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
-		C578109818C29A370018AFDF /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
-		C578109918C29A370018AFDF /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = gimbalSDK/FYX.framework; sourceTree = "<group>"; };
-		C578109B18C29A370018AFDF /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
-		C578109F18C29A700018AFDF /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
-		C57810A218C29A700018AFDF /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
-		C57810A518C29A700018AFDF /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
-		C57810A718C29A700018AFDF /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
-		C57810A918C29A700018AFDF /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
 		C57810AC18C29A9D0018AFDF /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
 		C57810AF18C29A9D0018AFDF /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
 		C57810B218C29A9D0018AFDF /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
@@ -99,7 +87,6 @@
 				C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */,
 				C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */,
 				C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */,
-				C578109D18C29A6F0018AFDF /* FYX.framework in Frameworks */,
 				C578107A18C2865D0018AFDF /* Security.framework in Frameworks */,
 				C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */,
 				C578107818C286550018AFDF /* MapKit.framework in Frameworks */,
@@ -154,15 +141,6 @@
 				C57810B118C29A9D0018AFDF /* ContextLocation.embeddedframework */,
 				C57810B518C29A9D0018AFDF /* FYX.framework */,
 				C57810B618C29A9D0018AFDF /* NetworkServices.embeddedframework */,
-				C578109E18C29A700018AFDF /* Common.embeddedframework */,
-				C57810A118C29A700018AFDF /* ContextCore.embeddedframework */,
-				C57810A418C29A700018AFDF /* ContextLocation.embeddedframework */,
-				C57810A818C29A700018AFDF /* NetworkServices.embeddedframework */,
-				C578108F18C29A370018AFDF /* Common.embeddedframework */,
-				C578109218C29A370018AFDF /* ContextCore.embeddedframework */,
-				C578109518C29A370018AFDF /* ContextLocation.embeddedframework */,
-				C578109918C29A370018AFDF /* FYX.framework */,
-				C578109A18C29A370018AFDF /* NetworkServices.embeddedframework */,
 				C578107918C2865D0018AFDF /* Security.framework */,
 				C578107718C286550018AFDF /* MapKit.framework */,
 				C578107518C286490018AFDF /* libz.dylib */,
@@ -218,144 +196,6 @@
 				8188469818C26ACE00590ECA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C578108F18C29A370018AFDF /* Common.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C578109018C29A370018AFDF /* Common.framework */,
-				C578109118C29A370018AFDF /* Resources */,
-			);
-			name = Common.embeddedframework;
-			path = gimbalSDK/Common.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C578109118C29A370018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C578109218C29A370018AFDF /* ContextCore.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C578109318C29A370018AFDF /* ContextCore.framework */,
-				C578109418C29A370018AFDF /* Resources */,
-			);
-			name = ContextCore.embeddedframework;
-			path = gimbalSDK/ContextCore.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C578109418C29A370018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C578109518C29A370018AFDF /* ContextLocation.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C578109618C29A370018AFDF /* ContextLocation.framework */,
-				C578109718C29A370018AFDF /* Resources */,
-			);
-			name = ContextLocation.embeddedframework;
-			path = gimbalSDK/ContextLocation.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C578109718C29A370018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C578109818C29A370018AFDF /* DataModels.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C578109A18C29A370018AFDF /* NetworkServices.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C578109B18C29A370018AFDF /* NetworkServices.framework */,
-				C578109C18C29A370018AFDF /* Resources */,
-			);
-			name = NetworkServices.embeddedframework;
-			path = gimbalSDK/NetworkServices.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C578109C18C29A370018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C578109E18C29A700018AFDF /* Common.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C578109F18C29A700018AFDF /* Common.framework */,
-				C57810A018C29A700018AFDF /* Resources */,
-			);
-			name = Common.embeddedframework;
-			path = gimbalSDK/Common.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C57810A018C29A700018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C57810A118C29A700018AFDF /* ContextCore.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C57810A218C29A700018AFDF /* ContextCore.framework */,
-				C57810A318C29A700018AFDF /* Resources */,
-			);
-			name = ContextCore.embeddedframework;
-			path = gimbalSDK/ContextCore.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C57810A318C29A700018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C57810A418C29A700018AFDF /* ContextLocation.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C57810A518C29A700018AFDF /* ContextLocation.framework */,
-				C57810A618C29A700018AFDF /* Resources */,
-			);
-			name = ContextLocation.embeddedframework;
-			path = gimbalSDK/ContextLocation.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C57810A618C29A700018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C57810A718C29A700018AFDF /* DataModels.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C57810A818C29A700018AFDF /* NetworkServices.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C57810A918C29A700018AFDF /* NetworkServices.framework */,
-				C57810AA18C29A700018AFDF /* Resources */,
-			);
-			name = NetworkServices.embeddedframework;
-			path = gimbalSDK/NetworkServices.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C57810AA18C29A700018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		C57810AB18C29A9D0018AFDF /* Common.embeddedframework */ = {
@@ -655,6 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					gimbalSDK,
