@@ -7,12 +7,15 @@
 //
 
 #import "SkyEyeAppDelegate.h"
+#import <FYX/FYX.h>
 
 @implementation SkyEyeAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [FYX setAppId:@"ac4a8f59850cc6031d0786d111f748e8dc391b25a9eee44bdfc0e9f9fa58f332" appSecret:@"3d9f817c64ae3b5fbdccbb32bec8f18f961f8549b44546d934b801a2c389e1c0" callbackUrl:@"skyeye://authcode"];
+    
     return YES;
 }
 							
