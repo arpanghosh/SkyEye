@@ -657,16 +657,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/Common.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/ContextCore.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/ContextLocation.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/NetworkServices.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/Common.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/ContextCore.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/ContextLocation.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/NetworkServices.embeddedframework,
+					gimbalSDK,
+					gimbalSDK/Common.embeddedframework,
+					gimbalSDK/ContextCore.embeddedframework,
+					gimbalSDK/ContextLocation.embeddedframework,
+					gimbalSDK/NetworkServices.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
@@ -683,16 +678,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/Common.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/ContextCore.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/ContextLocation.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/NetworkServices.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/Common.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/ContextCore.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/ContextLocation.embeddedframework,
-					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/NetworkServices.embeddedframework,
+					gimbalSDK,
+					gimbalSDK/Common.embeddedframework,
+					gimbalSDK/ContextCore.embeddedframework,
+					gimbalSDK/ContextLocation.embeddedframework,
+					gimbalSDK/NetworkServices.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
