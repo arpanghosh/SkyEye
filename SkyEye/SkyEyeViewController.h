@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FYX/FYX.h>
+#import <FYX/FYXVisitManager.h>
 
-@interface SkyEyeViewController : UIViewController
+@interface SkyEyeViewController : UIViewController <FYXServiceDelegate, FYXVisitDelegate>
+@property (weak, nonatomic) IBOutlet UITextView *status;
 
 @end

@@ -21,6 +21,19 @@
 		8188469218C26ACE00590ECA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467418C26ACE00590ECA /* UIKit.framework */; };
 		8188469A18C26ACE00590ECA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188469818C26ACE00590ECA /* InfoPlist.strings */; };
 		8188469C18C26ACE00590ECA /* SkyEyeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188469B18C26ACE00590ECA /* SkyEyeTests.m */; };
+		C578107018C284570018AFDF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578106F18C284570018AFDF /* CoreBluetooth.framework */; };
+		C578107318C284710018AFDF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107118C284710018AFDF /* CoreData.framework */; };
+		C578107418C284710018AFDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107218C284710018AFDF /* CoreLocation.framework */; };
+		C578107618C2864A0018AFDF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107518C286490018AFDF /* libz.dylib */; };
+		C578107818C286550018AFDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107718C286550018AFDF /* MapKit.framework */; };
+		C578107A18C2865D0018AFDF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107918C2865D0018AFDF /* Security.framework */; };
+		C578109D18C29A6F0018AFDF /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578109918C29A370018AFDF /* FYX.framework */; };
+		C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AC18C29A9D0018AFDF /* Common.framework */; };
+		C57810BA18C29A9D0018AFDF /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AF18C29A9D0018AFDF /* ContextCore.framework */; };
+		C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B218C29A9D0018AFDF /* ContextLocation.framework */; };
+		C57810BC18C29A9D0018AFDF /* DataModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C57810B418C29A9D0018AFDF /* DataModels.bundle */; };
+		C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B518C29A9D0018AFDF /* FYX.framework */; };
+		C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B718C29A9D0018AFDF /* NetworkServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +66,29 @@
 		8188469718C26ACE00590ECA /* SkyEyeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkyEyeTests-Info.plist"; sourceTree = "<group>"; };
 		8188469918C26ACE00590ECA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8188469B18C26ACE00590ECA /* SkyEyeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyEyeTests.m; sourceTree = "<group>"; };
+		C578106F18C284570018AFDF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		C578107118C284710018AFDF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C578107218C284710018AFDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C578107518C286490018AFDF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C578107718C286550018AFDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C578107918C2865D0018AFDF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C578109018C29A370018AFDF /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		C578109318C29A370018AFDF /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
+		C578109618C29A370018AFDF /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
+		C578109818C29A370018AFDF /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
+		C578109918C29A370018AFDF /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = gimbalSDK/FYX.framework; sourceTree = "<group>"; };
+		C578109B18C29A370018AFDF /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
+		C578109F18C29A700018AFDF /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		C57810A218C29A700018AFDF /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
+		C57810A518C29A700018AFDF /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
+		C57810A718C29A700018AFDF /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
+		C57810A918C29A700018AFDF /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
+		C57810AC18C29A9D0018AFDF /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
+		C57810AF18C29A9D0018AFDF /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
+		C57810B218C29A9D0018AFDF /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
+		C57810B418C29A9D0018AFDF /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
+		C57810B518C29A9D0018AFDF /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = gimbalSDK/FYX.framework; sourceTree = "<group>"; };
+		C57810B718C29A9D0018AFDF /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +96,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */,
+				C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */,
+				C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */,
+				C578109D18C29A6F0018AFDF /* FYX.framework in Frameworks */,
+				C578107A18C2865D0018AFDF /* Security.framework in Frameworks */,
+				C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */,
+				C578107818C286550018AFDF /* MapKit.framework in Frameworks */,
+				C578107618C2864A0018AFDF /* libz.dylib in Frameworks */,
+				C578107318C284710018AFDF /* CoreData.framework in Frameworks */,
+				C578107418C284710018AFDF /* CoreLocation.framework in Frameworks */,
+				C57810BA18C29A9D0018AFDF /* ContextCore.framework in Frameworks */,
+				C578107018C284570018AFDF /* CoreBluetooth.framework in Frameworks */,
 				8188467318C26ACE00590ECA /* CoreGraphics.framework in Frameworks */,
 				8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */,
 				8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */,
@@ -101,6 +149,26 @@
 		8188466F18C26ACE00590ECA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C57810AB18C29A9D0018AFDF /* Common.embeddedframework */,
+				C57810AE18C29A9D0018AFDF /* ContextCore.embeddedframework */,
+				C57810B118C29A9D0018AFDF /* ContextLocation.embeddedframework */,
+				C57810B518C29A9D0018AFDF /* FYX.framework */,
+				C57810B618C29A9D0018AFDF /* NetworkServices.embeddedframework */,
+				C578109E18C29A700018AFDF /* Common.embeddedframework */,
+				C57810A118C29A700018AFDF /* ContextCore.embeddedframework */,
+				C57810A418C29A700018AFDF /* ContextLocation.embeddedframework */,
+				C57810A818C29A700018AFDF /* NetworkServices.embeddedframework */,
+				C578108F18C29A370018AFDF /* Common.embeddedframework */,
+				C578109218C29A370018AFDF /* ContextCore.embeddedframework */,
+				C578109518C29A370018AFDF /* ContextLocation.embeddedframework */,
+				C578109918C29A370018AFDF /* FYX.framework */,
+				C578109A18C29A370018AFDF /* NetworkServices.embeddedframework */,
+				C578107918C2865D0018AFDF /* Security.framework */,
+				C578107718C286550018AFDF /* MapKit.framework */,
+				C578107518C286490018AFDF /* libz.dylib */,
+				C578107118C284710018AFDF /* CoreData.framework */,
+				C578107218C284710018AFDF /* CoreLocation.framework */,
+				C578106F18C284570018AFDF /* CoreBluetooth.framework */,
 				8188467018C26ACE00590ECA /* Foundation.framework */,
 				8188467218C26ACE00590ECA /* CoreGraphics.framework */,
 				8188467418C26ACE00590ECA /* UIKit.framework */,
@@ -150,6 +218,213 @@
 				8188469818C26ACE00590ECA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C578108F18C29A370018AFDF /* Common.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C578109018C29A370018AFDF /* Common.framework */,
+				C578109118C29A370018AFDF /* Resources */,
+			);
+			name = Common.embeddedframework;
+			path = gimbalSDK/Common.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C578109118C29A370018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C578109218C29A370018AFDF /* ContextCore.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C578109318C29A370018AFDF /* ContextCore.framework */,
+				C578109418C29A370018AFDF /* Resources */,
+			);
+			name = ContextCore.embeddedframework;
+			path = gimbalSDK/ContextCore.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C578109418C29A370018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C578109518C29A370018AFDF /* ContextLocation.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C578109618C29A370018AFDF /* ContextLocation.framework */,
+				C578109718C29A370018AFDF /* Resources */,
+			);
+			name = ContextLocation.embeddedframework;
+			path = gimbalSDK/ContextLocation.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C578109718C29A370018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C578109818C29A370018AFDF /* DataModels.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C578109A18C29A370018AFDF /* NetworkServices.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C578109B18C29A370018AFDF /* NetworkServices.framework */,
+				C578109C18C29A370018AFDF /* Resources */,
+			);
+			name = NetworkServices.embeddedframework;
+			path = gimbalSDK/NetworkServices.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C578109C18C29A370018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C578109E18C29A700018AFDF /* Common.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C578109F18C29A700018AFDF /* Common.framework */,
+				C57810A018C29A700018AFDF /* Resources */,
+			);
+			name = Common.embeddedframework;
+			path = gimbalSDK/Common.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C57810A018C29A700018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C57810A118C29A700018AFDF /* ContextCore.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C57810A218C29A700018AFDF /* ContextCore.framework */,
+				C57810A318C29A700018AFDF /* Resources */,
+			);
+			name = ContextCore.embeddedframework;
+			path = gimbalSDK/ContextCore.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C57810A318C29A700018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C57810A418C29A700018AFDF /* ContextLocation.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C57810A518C29A700018AFDF /* ContextLocation.framework */,
+				C57810A618C29A700018AFDF /* Resources */,
+			);
+			name = ContextLocation.embeddedframework;
+			path = gimbalSDK/ContextLocation.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C57810A618C29A700018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C57810A718C29A700018AFDF /* DataModels.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C57810A818C29A700018AFDF /* NetworkServices.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C57810A918C29A700018AFDF /* NetworkServices.framework */,
+				C57810AA18C29A700018AFDF /* Resources */,
+			);
+			name = NetworkServices.embeddedframework;
+			path = gimbalSDK/NetworkServices.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C57810AA18C29A700018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C57810AB18C29A9D0018AFDF /* Common.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C57810AC18C29A9D0018AFDF /* Common.framework */,
+				C57810AD18C29A9D0018AFDF /* Resources */,
+			);
+			name = Common.embeddedframework;
+			path = gimbalSDK/Common.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C57810AD18C29A9D0018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C57810AE18C29A9D0018AFDF /* ContextCore.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C57810AF18C29A9D0018AFDF /* ContextCore.framework */,
+				C57810B018C29A9D0018AFDF /* Resources */,
+			);
+			name = ContextCore.embeddedframework;
+			path = gimbalSDK/ContextCore.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C57810B018C29A9D0018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C57810B118C29A9D0018AFDF /* ContextLocation.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C57810B218C29A9D0018AFDF /* ContextLocation.framework */,
+				C57810B318C29A9D0018AFDF /* Resources */,
+			);
+			name = ContextLocation.embeddedframework;
+			path = gimbalSDK/ContextLocation.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C57810B318C29A9D0018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C57810B418C29A9D0018AFDF /* DataModels.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C57810B618C29A9D0018AFDF /* NetworkServices.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C57810B718C29A9D0018AFDF /* NetworkServices.framework */,
+				C57810B818C29A9D0018AFDF /* Resources */,
+			);
+			name = NetworkServices.embeddedframework;
+			path = gimbalSDK/NetworkServices.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C57810B818C29A9D0018AFDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +507,7 @@
 				8188468918C26ACE00590ECA /* Images.xcassets in Resources */,
 				8188467B18C26ACE00590ECA /* InfoPlist.strings in Resources */,
 				8188468418C26ACE00590ECA /* Main.storyboard in Resources */,
+				C57810BC18C29A9D0018AFDF /* DataModels.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +655,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/Common.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/ContextCore.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/ContextLocation.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/NetworkServices.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/Common.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/ContextCore.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/ContextLocation.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/NetworkServices.embeddedframework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
@@ -392,6 +681,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/Common.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/ContextCore.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/ContextLocation.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/NetworkServices.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/Common.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/ContextCore.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/ContextLocation.embeddedframework,
+					/Users/enric/Documents/iOS/iBeacon/SkyEye/gimbalSDK/NetworkServices.embeddedframework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
@@ -461,6 +763,7 @@
 				818846A118C26ACE00590ECA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		818846A218C26ACE00590ECA /* Build configuration list for PBXNativeTarget "SkyEyeTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +772,7 @@
 				818846A418C26ACE00590ECA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
