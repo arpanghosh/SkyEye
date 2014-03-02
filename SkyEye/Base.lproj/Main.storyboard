@@ -52,7 +52,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startDrone" destination="vXZ-lx-hvc" eventType="touchUpInside" id="imJ-uW-2iK"/>
                                     <action selector="stopDrone" destination="vXZ-lx-hvc" eventType="touchUpInside" id="U3f-Mj-eT8"/>
                                 </connections>
                             </button>

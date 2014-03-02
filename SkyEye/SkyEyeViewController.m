@@ -46,10 +46,11 @@
     if ([self.nodeIPAddress.text isValidIPAddress]) {
         [defaults setValue:self.nodeIPAddress.text forKey:@"sky_eye_node_ip"];
         [self updateUIForPilotingDrone];
+        [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"startDrone" withData:nil];
         [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] startSightingGimbalBeaconsWithDelagate:self
                                                                                andSmoothingMode:self.beaconSmoothingMode];
-        [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] startTrackingUserStepCountWithDelegate:self];
-        [[SkyEyeHeadingManager sharedSkyEyeHeadingManager] startTrackingHeadingWithDelegate:self];
+        //[[SkyEyeStepCountManager sharedSkyEyeStepCountManager] startTrackingUserStepCountWithDelegate:self];
+        //[[SkyEyeHeadingManager sharedSkyEyeHeadingManager] startTrackingHeadingWithDelegate:self];
     }else{
         dispatch_async(dispatch_get_main_queue(), ^{
             self.nodeIPAddress.text = @"Invalid IP Address";
@@ -59,10 +60,11 @@
 }
 
 - (IBAction)stopDrone {
-    //Send killswitch event on socket
+    
     [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] stopSightingGimbalBeacons];
-    [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] stopTrackingUserStepCount];
-    [[SkyEyeHeadingManager sharedSkyEyeHeadingManager] stopTrackingHeading];
+    //[[SkyEyeStepCountManager sharedSkyEyeStepCountManager] stopTrackingUserStepCount];
+    //[[SkyEyeHeadingManager sharedSkyEyeHeadingManager] stopTrackingHeading];
+    [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stopDrone" withData:nil];
     [self updateUIForConfig];
 }
 
