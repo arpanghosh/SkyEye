@@ -37,7 +37,7 @@
 {
     // this will be invoked if the service has successfully started
     // bluetooth scanning will be started at this point.
-    self.status.text = [NSString stringWithFormat:@"FYX Service Successfully Started%@", self.status.text];
+    NSLog(@"FYX Service Successfully Started");
     self.visitManager = [FYXVisitManager new];
     self.visitManager.delegate = self;
     [self.visitManager start];
@@ -47,7 +47,7 @@
 - (void)startServiceFailed:(NSError *)error
 {
     // this will be called if the service has failed to start
-    self.status.text = [NSString stringWithFormat:@"Error: %@%@", error, self.status.text];
+    NSLog(@"Error: %@", error);
 }
 
 #pragma mark - Gimbal bluetooth scan
@@ -55,18 +55,18 @@
 - (void)didArrive:(FYXVisit *)visit;
 {
     // this will be invoked when an authorized transmitter is sighted for the first time
-    self.status.text = [NSString stringWithFormat:@"\nI arrived at a Gimbal Beacon!!! %@%@", visit.transmitter.name, self.status.text];
+    NSLog(@"I arrived at a Gimbal Beacon!!! %@", visit.transmitter.name);
 }
 - (void)receivedSighting:(FYXVisit *)visit updateTime:(NSDate *)updateTime RSSI:(NSNumber *)RSSI;
 {
     // this will be invoked when an authorized transmitter is sighted during an on-going visit
-    self.status.text = [NSString stringWithFormat:@"\nI received a sighting!!! %@ RSSI:%@%@", visit.transmitter.name, RSSI, self.status.text];
+    NSLog(@"I received a sighting!!! %@ RSSI:%@", visit.transmitter.name, RSSI);
 }
 - (void)didDepart:(FYXVisit *)visit;
 {
     // this will be invoked when an authorized transmitter has not been sighted for some time
-    self.status.text = [NSString stringWithFormat:@"\nI left the proximity of a Gimbal Beacon!!!! %@%@", visit.transmitter.name, self.status.text];
-    self.status.text = [NSString stringWithFormat:@"\nI was around the beacon for %f seconds%@", visit.dwellTime, self.status.text];
+    NSLog(@"I left the proximity of a Gimbal Beacon!!!! %@", visit.transmitter.name);
+    NSLog(@"I was around the beacon for %f seconds", visit.dwellTime);
 }
 
 
