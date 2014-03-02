@@ -26,7 +26,7 @@
      [FYX startService:self];
     // Connect to the node socketIO server
     self.socketIO = [[SocketIO alloc] initWithDelegate:Nil];
-    [self.socketIO connectToHost:@"localhost" onPort:9000];
+    [self.socketIO connectToHost:@"192.168.1.2" onPort:9000];
 }
 
 - (void)didReceiveMemoryWarning
