@@ -7,7 +7,7 @@
 
 var io = require('socket.io').listen(9000);
 var arDrone = require('ar-drone');
-var client  = arDrone.createClient();
+// var client  = arDrone.createClient();
 var stateVariables = {
   'beaconData': [],
   'coreMotionData': null,
@@ -54,7 +54,7 @@ var updateCoreMotionData = function (coreMotionData) {
 }
 
 function initializeDrone () {
-  client.takeoff();
+  // client.takeoff();
 }
 
 function controlDrone() {
