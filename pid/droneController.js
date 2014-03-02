@@ -14,12 +14,16 @@ io.sockets.on('connection', function (socket) {
   socket.on('beaconData', updateBeaconData);
   socket.on('coreMotionData', updateMotionData);
   initializeDrone();
+  setInterval(controlDrone,25);
 });
 
+// For beacon we are just getting one float, signal strength
 var updateBeaconData = function (beaconData) {
   stateVariables['beaconData'] =  JSON.parse(beaconData);
+  // Maintain the running average of the beacon data
 }
 
+// For core motion we should get two 3d vectors
 var updateCoreMotionData = function (coreMotionData) {
   stateVariables['coreMotionData'] =  JSON.parse(coreMotionData);
 }
@@ -29,6 +33,15 @@ function initializeDrone () {
 }
 
 var controlDrone = function () {
+  // Get drone AV Data
+
+  // Combine all of our distance metrics into one
+
+  // Calculate Error
+
+  // Calculate adjustments, the new horizontal speed
+
+  // Send the updated commands to the drone
   if (stateVariables['beaconData'] > (optimalState['optimalBeaconDistance']+optimalState['beaconDistanceError'])) {
     client.front(0.2);
   };
