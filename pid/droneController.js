@@ -2,6 +2,25 @@
 // node deps:
 // socket.io
 
+// Create http Server stuff
+var path = require('path');
+
+// listen on this port for all http, socket.io, and multi-axis requests
+var httpPort = 8080;
+// serve http from this path
+var clientroot = path.join(__dirname, '');
+
+//
+// start up the HTTP server
+//
+
+var connect = require('connect');
+
+var app = connect()
+    .use( connect.logger( 'dev' ) )
+    .use( connect.static( clientroot ) ).listen( httpPort );
+
+
 var io = require('socket.io');
 var arDrone = require('ar-drone');
 
@@ -27,6 +46,10 @@ function PidController(proportionalGain, integralGain, derivativeGain) {
 
   // Functions.
   self.calculateAdjustment = function(error, deltaTime) {
+    if (isNaN(error) || isNaN(deltaTime)) {
+      return 0.0;
+    }
+
     // Calculate terms.
     var proportionalTerm = self.PROPORTIONAL_GAIN * error;
     var integralTerm = self.INTEGRAL_GAIN * (self.totalError + error * deltaTime);
@@ -35,6 +58,11 @@ function PidController(proportionalGain, integralGain, derivativeGain) {
     // Update the pid loop state.
     self.totalError = self.totalError + error * deltaTime;
     self.lastError = error;
+
+    if (isNaN(proportionalTerm) || isNaN(integralTerm) || isNaN(derivativeTerm)) {
+      console.warn('p = ' + proportionalTerm + ', i = ' + integralTerm + ', d = ' + derivativeTerm);
+      console.warn(self.INTEGRAL_GAIN + ', ' + error + ', ' + deltaTime + ', ' + self.totalError);
+    }
 
     return proportionalTerm + integralTerm + derivativeTerm;
   };
@@ -46,7 +74,7 @@ function rssiToDist(rssi) {
 }
 
 
-function DroneController(
+DroneController = function (
     pidController,
     trackingDistance,
     trackingDeadzone,
@@ -60,13 +88,14 @@ function DroneController(
   self.trackingDistance = trackingDistance;
   self.trackingDeadzone = trackingDeadzone;
   self.smoothingWindowSize = smoothingWindowSize;
-  self.plottingCallback
+  self.plottingCallback = plottingCallback;
 
   // Setup state variables.
   self.beaconData = [];
   self.coreMotionData = null;
   self.droneData = null;
   self.stepData = null;
+
 
   self.start = function(ioPort) {
     
@@ -75,7 +104,7 @@ function DroneController(
       var id = beaconData['beaconId'];
       var data = rssiToDist(parseInt(beaconData['beaconData']));
 
-      console.log("Received beacon data: " + beaconData);
+      console.log("Received beacon data: " + JSON.stringify(beaconData));
 
       self.beaconData.push(data);
       if (self.beaconData.length > self.smoothingWindowSize) {
@@ -84,6 +113,7 @@ function DroneController(
 
       // Attach a timestamp to the receive time and use a moving window
     }
+    self.setPlottingCallback = function (callback) { self.plottingCallback = callback; }
     function updateStepData(stepData) { console.log("Step Data Recieved: " + stepData); }
     function updateCoreMotionData(coreMotionData) { self.coreMotionData = coreMotionData; }
 
@@ -103,7 +133,7 @@ function DroneController(
           console.log('[' + timestamp + ']: Stop(), dist = ' + distance + ', error = ' + error);
         }
       } else {
-        console.log('WARNING: TRYING TO MOVE TOO FAST: ' + horizontalSpeed + ' distance = : '+ distance+' error : '+error);
+        console.warn('TRYING TO MOVE TOO FAST: ' + horizontalSpeed + ' dist = ' + distance + ', error = ' + error);
       }
     }
 
@@ -114,18 +144,22 @@ function DroneController(
       client.config('general:navdata_demo', 'FALSE');
       client.on('navdata', updateNavData);
       // Takeoff drone
-      console.log("Start Srone");
-      client.takeoff(); 
+      console.info("Start Drone");
+      //client.takeoff(); 
     }
     function updateNavData(navData) {
-      
+
     }
 
     function stopDrone() { 
-      console.log("Stop Drone");
-      client.land(); 
+      console.info("Stop Drone");
+      //client.land(); 
     }
     function controlDrone() {
+      if (self.beaconData.length == 0) {
+        console.warn("self.beaconData is empty!");
+      }
+
       // Combine all of our distance metrics into one
       var distance = 0.0;
       self.beaconData.forEach(function (signalStrength) {
@@ -133,6 +167,9 @@ function DroneController(
       });
       distance = distance / self.beaconData.length;
       // TODO: convert this from decibels to distance.
+      if (isNaN(distance)) {
+        console.warn("calculated distance is NAN!");
+      }
 
       // Calculate Error
       var error = distance - self.trackingDistance;
@@ -151,13 +188,13 @@ function DroneController(
     // -- Setup --
 
     self.ioPort = ioPort;
-    io.listen(ioPort);
+    var server = io.listen(ioPort);
 
-    console.log('Waiting for socket.io connection on port ' + ioPort + '...');
+    console.info('Waiting for socket.io connection on port ' + ioPort + '...');
 
     // Once the iPhone has made the connection initialize the calback functions and initialize
     // the drone.
-    io.sockets.on('connection', function (socket) {
+    server.sockets.on('connection', function (socket) {
       // Register socket event callbacks.
       socket.on('beaconData', updateBeaconData);
       socket.on('coreMotionData', updateCoreMotionData);
@@ -166,7 +203,7 @@ function DroneController(
       socket.on('startDrone', startDrone);
 
 
-      console.log('Socket.io connected.');
+      console.info('Socket.io connected.');
 
       // Setup the control loop, and register a shutdown callback.
       setInterval(controlDrone, 25);
@@ -178,11 +215,11 @@ function DroneController(
 
 // Create a new drone controller and start it.
 // NOTE: COMMENT THESE OUT BEFORE USING THIS IN THE FLOT PLOTTER.
-// var controller = new DroneController(
-//     new PidController(0.1, 0, 0.001),
-//     1.4,
-//     0.005,
-//     8,
-//     function() { }
-// );
-// controller.start(9000);
+ var controller = new DroneController(
+     new PidController(0.1, 0, 0.001),
+     1.4,
+     0.005,
+     32,
+     function() { }
+ );
+ controller.start(9000);

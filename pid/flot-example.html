@@ -21,64 +21,10 @@
     <script
         language="javascript"
         type="text/javascript"
-        src="./droneController.js">
+        src="./flotScript.js">
     </script>
 
-    <!-- Flot chart code. -->
-    <script type="text/javascript">
-      // Runs this code after page load.
-      $(function() {
-        // Data buffers:
-        var distanceData = [];
-        var errorData = [];
-        var adjustmentData = [];
-
-        // Set up the plot widget
-        var plot = $.plot(
-            "#placeholder",
-            [distanceData, errorData, adjustmentData],
-            {
-              series: {
-                shadowSize: 0	// Drawing is faster without shadows
-              },
-              yaxis: {
-                min: -20,
-                max: 20
-              },
-              xaxis: {
-                show: false
-              }
-            }
-        );
-
-        // Add the Flot version string to the footer
-        $("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
-
-        // Setup the callback such that it appends data as received.
-        function plotData(distance, error, adjustent) {
-          // Store incomming data in appropriate buffers.
-          distanceData.push(distance);
-          errorData.push(error);
-          adjustmentData.push(adjustent);
-
-          // Update the plot with new incoming data. Since the axes don't change, we don't need to
-          // call plot.setupGrid().
-          plot.setData([distanceData, errorData, adjustmentData]);
-          plot.draw();
-
-        }
-
-        // Create & start the controller.
-        var controller = new DroneController(
-            new PidController(0.1, 0, 0.001),
-            1.4,
-            0.005,
-            8,
-            plotData
-        );
-        controller.start(9000);
-      });
-    </script>
+    
     <style id="clearly_highlighting_css" type="text/css">
       /* selection */
       html.clearly_highlighting_enabled ::-moz-selection {
