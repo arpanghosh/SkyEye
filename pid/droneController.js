@@ -69,8 +69,7 @@ function DroneController(
   self.stepData = null;
 
   self.start = function(ioPort) {
-    var client  = arDrone.createClient();
-
+    
     // Private callbacks.
     function updateBeaconData(beaconData) {
       var id = beaconData['beaconId'];
@@ -108,8 +107,24 @@ function DroneController(
       }
     }
 
-    function startDrone() { client.takeoff(); }
-    function stopDrone() { client.land(); }
+    function startDrone() { 
+      // Connect to the drone
+      client  = arDrone.createClient();
+      // Enable Navdata reading and listen to it
+      client.config('general:navdata_demo', 'FALSE');
+      client.on('navdata', updateNavData);
+      // Takeoff drone
+      console.log("Start Srone");
+      client.takeoff(); 
+    }
+    function updateNavData(navData) {
+      
+    }
+
+    function stopDrone() { 
+      console.log("Stop Drone");
+      client.land(); 
+    }
     function controlDrone() {
       // Combine all of our distance metrics into one
       var distance = 0.0;
@@ -120,7 +135,7 @@ function DroneController(
       // TODO: convert this from decibels to distance.
 
       // Calculate Error
-      var error = distance - self.trackingDistance'];
+      var error = distance - self.trackingDistance;
 
       // Calculate adjustments, the new horizontal speed
       var horizontalSpeed = self.pidController.calculateAdjustment(error, 0.025);
@@ -146,14 +161,16 @@ function DroneController(
       // Register socket event callbacks.
       socket.on('beaconData', updateBeaconData);
       socket.on('coreMotionData', updateCoreMotionData);
-      socket.on('stepData', updateStepData)
+      socket.on('stepData', updateStepData);
+      socket.on('stopDrone', stopDrone);
+      socket.on('startDrone', startDrone);
+
 
       console.log('Socket.io connected.');
 
-      // Start the drone, setup the control loop, and register a shutdown callback.
-      startDrone();
+      // Setup the control loop, and register a shutdown callback.
       setInterval(controlDrone, 25);
-      setTimeout(stopDrone, 60000);
+      //setTimeout(stopDrone, 60000);
     });
   }
 }
