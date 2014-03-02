@@ -21,6 +21,7 @@
     #import <FYX/FYXTransmitter.h>
     #import "SocketIO.h"
     #import <BButton/BButton.h>
+    #import <Underscore.m/Underscore.h>
 
     #import "SkyEyeConstants.h"
     #import "SkyEyeSharedSocket.h"
