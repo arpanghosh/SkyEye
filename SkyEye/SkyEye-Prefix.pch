@@ -13,4 +13,19 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import <CoreMotion/CoreMotion.h>
+    #import <FYX/FYX.h>
+    #import <FYX/FYXVisitManager.h>
+    #import <FYX/FYXSightingManager.h>
+    #import <FYX/FYXTransmitter.h>
+    #import "SocketIO.h"
+    #import <BButton/BButton.h>
+
+    #import "SkyEyeConstants.h"
+    #import "SkyEyeSharedSocket.h"
+    #import "SkyEyeMotionDelegate.h"
+    #import "SkyEyeBeaconDelegate.h"
+    #import "SkyEyeStepCountManager.h"
+    #import "SkyEyeGimbalManager.h"
+
 #endif

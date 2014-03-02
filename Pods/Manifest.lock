@@ -1,12 +1,15 @@
 PODS:
+  - BButton (3.2.3)
   - socket.IO (0.4.1):
     - SocketRocket (~> 0.2)
   - SocketRocket (0.3.1-beta2)
 
 DEPENDENCIES:
+  - BButton (~> 3.2)
   - socket.IO (~> 0.4)
 
 SPEC CHECKSUMS:
+  BButton: b405745cd7ccc9444c696b8690fb79541623766a
   socket.IO: e0f5dc9a4dda5e41653f2032ac48217e1563176e
   SocketRocket: 7ac946bcce46287a791dfff3c1f8daa692821dae
 

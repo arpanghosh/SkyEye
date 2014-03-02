@@ -10,7 +10,7 @@
 
 @interface SkyEyeSharedSocket()
 
-@property (nonatomic, strong) SocketIO* socket;
+@property (nonatomic, strong) SocketIO *socket;
 
 @end
 
@@ -29,7 +29,9 @@
 - (id)init {
     if (self = [super init]) {
         _socket = [[SocketIO alloc] initWithDelegate:Nil];
-        [_socket connectToHost:@"192.168.1.2" onPort:9000];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *nodeIP = [defaults objectForKey:@"sky_eye_node_ip"];
+        [_socket connectToHost:nodeIP onPort:SKYEYE_NODE_CONTROLLER_PORT];
     }
     return self;
 }

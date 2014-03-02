@@ -1,0 +1,17 @@
+//
+//  SkyEyeConstants.h
+//  SkyEye
+//
+//  Created by Arpan Ghosh on 3/2/14.
+//  Copyright (c) 2014 SkyEye. All rights reserved.
+//
+
+#define SKYEYE_NODE_CONTROLLER_PORT 9000
+
+#define SKYEYE_STEP_COUNT_UPDATE_INTERVAL 1
+
+#define SKYEYE_GIMBAL_REGION_THRESHOLD_RSSI -100
+
+
+#define SKYEYE_GIMBAL_APP_ID @"c504da86c837f025231cfa52e8e50a2047d721ed1f368269598b03791cb5aadc"
+#define SKYEYE_GIMBAL_APP_SECRET @"d8930921a00a7c4ad9b647357ce16b2c7c73ee2e6c874584a7f6f4916b7029d4"

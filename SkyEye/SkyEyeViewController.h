@@ -6,15 +6,9 @@
 //  Copyright (c) 2014 SkyEye. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <FYX/FYX.h>
-#import <FYX/FYXVisitManager.h>
+#import "NSString+IPValidation.h"   
 
-#import "SkyEyeSharedSocket.h"
-#import "SkyEyeMotionDelegate.h"
-#import "SkyEyeStepCountManager.h"
+@interface SkyEyeViewController : UIViewController <SkyEyeBeaconDelegate, SkyEyeMotionDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
-@interface SkyEyeViewController : UIViewController <FYXServiceDelegate, FYXVisitDelegate, SkyEyeMotionDelegate>
-@property (weak, nonatomic) IBOutlet UITextView *status;
 
 @end

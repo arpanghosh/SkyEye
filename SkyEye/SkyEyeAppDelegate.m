@@ -7,14 +7,13 @@
 //
 
 #import "SkyEyeAppDelegate.h"
-#import <FYX/FYX.h>
+
 
 @implementation SkyEyeAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [FYX setAppId:@"c504da86c837f025231cfa52e8e50a2047d721ed1f368269598b03791cb5aadc" appSecret:@"d8930921a00a7c4ad9b647357ce16b2c7c73ee2e6c874584a7f6f4916b7029d4" callbackUrl:@"skyeye://authcode"];    
     return YES;
 }
 							
@@ -42,6 +41,8 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] stopSightingGimbalBeacons];
+    [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] stopStepCountingUpdates];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

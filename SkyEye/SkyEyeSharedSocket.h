@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 SkyEye. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "SocketIO.h"
+
 
 @interface SkyEyeSharedSocket : NSObject
 

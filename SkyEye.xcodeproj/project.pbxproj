@@ -9,8 +9,15 @@
 /* Begin PBXBuildFile section */
 		811CE3D918C2E65E00880C36 /* SkyEyeStepCountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */; };
 		811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */; };
+		811CE3E518C33DD800880C36 /* SkyEyeGimbalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3E418C33DD800880C36 /* SkyEyeGimbalManager.m */; };
+		811CE3E718C3498500880C36 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578106F18C284570018AFDF /* CoreBluetooth.framework */; };
+		811CE3E818C3499500880C36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467218C26ACE00590ECA /* CoreGraphics.framework */; };
+		811CE3EA18C349CD00880C36 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE3E918C349CD00880C36 /* MobileCoreServices.framework */; };
+		811CE3EC18C349F700880C36 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE3EB18C349F700880C36 /* SystemConfiguration.framework */; };
+		811CE3ED18C34A3D00880C36 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107518C286490018AFDF /* libz.dylib */; };
+		811CE3EF18C34A4F00880C36 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE3EE18C34A4F00880C36 /* CoreMotion.framework */; };
+		811CE3F218C36AB100880C36 /* NSString+IPValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3F118C36AB100880C36 /* NSString+IPValidation.m */; };
 		8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467018C26ACE00590ECA /* Foundation.framework */; };
-		8188467318C26ACE00590ECA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467218C26ACE00590ECA /* CoreGraphics.framework */; };
 		8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467418C26ACE00590ECA /* UIKit.framework */; };
 		8188467B18C26ACE00590ECA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188467918C26ACE00590ECA /* InfoPlist.strings */; };
 		8188467D18C26ACE00590ECA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188467C18C26ACE00590ECA /* main.m */; };
@@ -24,15 +31,10 @@
 		8188469A18C26ACE00590ECA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188469818C26ACE00590ECA /* InfoPlist.strings */; };
 		8188469C18C26ACE00590ECA /* SkyEyeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188469B18C26ACE00590ECA /* SkyEyeTests.m */; };
 		A5815496B69348C28816964C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD919BA653B4A3DBA897F15 /* libPods.a */; };
-		C578107018C284570018AFDF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578106F18C284570018AFDF /* CoreBluetooth.framework */; };
 		C578107318C284710018AFDF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107118C284710018AFDF /* CoreData.framework */; };
 		C578107418C284710018AFDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107218C284710018AFDF /* CoreLocation.framework */; };
-		C578107618C2864A0018AFDF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107518C286490018AFDF /* libz.dylib */; };
-		C578107818C286550018AFDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107718C286550018AFDF /* MapKit.framework */; };
 		C578107A18C2865D0018AFDF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107918C2865D0018AFDF /* Security.framework */; };
 		C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AC18C29A9D0018AFDF /* Common.framework */; };
-		C57810BA18C29A9D0018AFDF /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AF18C29A9D0018AFDF /* ContextCore.framework */; };
-		C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B218C29A9D0018AFDF /* ContextLocation.framework */; };
 		C57810BC18C29A9D0018AFDF /* DataModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C57810B418C29A9D0018AFDF /* DataModels.bundle */; };
 		C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B518C29A9D0018AFDF /* FYX.framework */; };
 		C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B718C29A9D0018AFDF /* NetworkServices.framework */; };
@@ -56,6 +58,15 @@
 		811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeStepCountManager.m; sourceTree = "<group>"; };
 		811CE3DD18C2EA3E00880C36 /* SkyEyeSharedSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeSharedSocket.h; sourceTree = "<group>"; };
 		811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeSharedSocket.m; sourceTree = "<group>"; };
+		811CE3E018C336A600880C36 /* SkyEyeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeConstants.h; sourceTree = "<group>"; };
+		811CE3E318C33DD800880C36 /* SkyEyeGimbalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeGimbalManager.h; sourceTree = "<group>"; };
+		811CE3E418C33DD800880C36 /* SkyEyeGimbalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeGimbalManager.m; sourceTree = "<group>"; };
+		811CE3E618C341CE00880C36 /* SkyEyeBeaconDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyEyeBeaconDelegate.h; sourceTree = "<group>"; };
+		811CE3E918C349CD00880C36 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		811CE3EB18C349F700880C36 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		811CE3EE18C34A4F00880C36 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		811CE3F018C36AB100880C36 /* NSString+IPValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IPValidation.h"; sourceTree = "<group>"; };
+		811CE3F118C36AB100880C36 /* NSString+IPValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IPValidation.m"; sourceTree = "<group>"; };
 		8188466D18C26ACE00590ECA /* SkyEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8188467018C26ACE00590ECA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8188467218C26ACE00590ECA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,20 +105,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */,
-				C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */,
-				C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */,
-				C578107A18C2865D0018AFDF /* Security.framework in Frameworks */,
-				C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */,
-				C578107818C286550018AFDF /* MapKit.framework in Frameworks */,
-				C578107618C2864A0018AFDF /* libz.dylib in Frameworks */,
-				C578107318C284710018AFDF /* CoreData.framework in Frameworks */,
+				811CE3EF18C34A4F00880C36 /* CoreMotion.framework in Frameworks */,
+				811CE3ED18C34A3D00880C36 /* libz.dylib in Frameworks */,
+				811CE3E818C3499500880C36 /* CoreGraphics.framework in Frameworks */,
+				811CE3E718C3498500880C36 /* CoreBluetooth.framework in Frameworks */,
 				C578107418C284710018AFDF /* CoreLocation.framework in Frameworks */,
-				C57810BA18C29A9D0018AFDF /* ContextCore.framework in Frameworks */,
-				C578107018C284570018AFDF /* CoreBluetooth.framework in Frameworks */,
-				8188467318C26ACE00590ECA /* CoreGraphics.framework in Frameworks */,
-				8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */,
+				C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */,
+				C578107318C284710018AFDF /* CoreData.framework in Frameworks */,
+				C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */,
 				8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */,
+				811CE3EA18C349CD00880C36 /* MobileCoreServices.framework in Frameworks */,
+				C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */,
+				C578107A18C2865D0018AFDF /* Security.framework in Frameworks */,
+				811CE3EC18C349F700880C36 /* SystemConfiguration.framework in Frameworks */,
+				8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */,
 				A5815496B69348C28816964C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +159,9 @@
 		8188466F18C26ACE00590ECA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				811CE3EE18C34A4F00880C36 /* CoreMotion.framework */,
+				811CE3EB18C349F700880C36 /* SystemConfiguration.framework */,
+				811CE3E918C349CD00880C36 /* MobileCoreServices.framework */,
 				C57810AB18C29A9D0018AFDF /* Common.embeddedframework */,
 				C57810AE18C29A9D0018AFDF /* ContextCore.embeddedframework */,
 				C57810B118C29A9D0018AFDF /* ContextLocation.embeddedframework */,
@@ -171,16 +185,22 @@
 		8188467618C26ACE00590ECA /* SkyEye */ = {
 			isa = PBXGroup;
 			children = (
+				811CE3E018C336A600880C36 /* SkyEyeConstants.h */,
 				811CE3DD18C2EA3E00880C36 /* SkyEyeSharedSocket.h */,
 				811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */,
 				811CE3D618C2E65E00880C36 /* SkyEyeMotionDelegate.h */,
+				811CE3E618C341CE00880C36 /* SkyEyeBeaconDelegate.h */,
 				811CE3D718C2E65E00880C36 /* SkyEyeStepCountManager.h */,
 				811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */,
+				811CE3E318C33DD800880C36 /* SkyEyeGimbalManager.h */,
+				811CE3E418C33DD800880C36 /* SkyEyeGimbalManager.m */,
 				8188467F18C26ACE00590ECA /* SkyEyeAppDelegate.h */,
 				8188468018C26ACE00590ECA /* SkyEyeAppDelegate.m */,
 				8188468218C26ACE00590ECA /* Main.storyboard */,
 				8188468518C26ACE00590ECA /* SkyEyeViewController.h */,
 				8188468618C26ACE00590ECA /* SkyEyeViewController.m */,
+				811CE3F018C36AB100880C36 /* NSString+IPValidation.h */,
+				811CE3F118C36AB100880C36 /* NSString+IPValidation.m */,
 				8188468818C26ACE00590ECA /* Images.xcassets */,
 				8188467718C26ACE00590ECA /* Supporting Files */,
 			);
@@ -421,9 +441,11 @@
 			files = (
 				8188468118C26ACE00590ECA /* SkyEyeAppDelegate.m in Sources */,
 				811CE3D918C2E65E00880C36 /* SkyEyeStepCountManager.m in Sources */,
+				811CE3F218C36AB100880C36 /* NSString+IPValidation.m in Sources */,
 				8188467D18C26ACE00590ECA /* main.m in Sources */,
 				8188468718C26ACE00590ECA /* SkyEyeViewController.m in Sources */,
 				811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */,
+				811CE3E518C33DD800880C36 /* SkyEyeGimbalManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +581,7 @@
 					gimbalSDK/ContextCore.embeddedframework,
 					gimbalSDK/ContextLocation.embeddedframework,
 					gimbalSDK/NetworkServices.embeddedframework,
+					/Users/arpanghosh/Developer/iOS/SkyEye/gimbalSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
@@ -581,6 +604,7 @@
 					gimbalSDK/ContextCore.embeddedframework,
 					gimbalSDK/ContextLocation.embeddedframework,
 					gimbalSDK/NetworkServices.embeddedframework,
+					/Users/arpanghosh/Developer/iOS/SkyEye/gimbalSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";

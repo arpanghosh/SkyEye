@@ -42,7 +42,7 @@
         self.motionDelegate = delegate;
         
         [self.skyEyeStepCounter startStepCountingUpdatesToQueue:[NSOperationQueue mainQueue]
-                                                       updateOn:1
+                                                       updateOn:SKYEYE_STEP_COUNT_UPDATE_INTERVAL
                                                     withHandler:^(NSInteger numberOfSteps,
                                                                   NSDate *timestamp,
                                                                   NSError *error) {
