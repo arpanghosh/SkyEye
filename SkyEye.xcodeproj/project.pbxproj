@@ -39,6 +39,7 @@
 		C57810BC18C29A9D0018AFDF /* DataModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C57810B418C29A9D0018AFDF /* DataModels.bundle */; };
 		C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B518C29A9D0018AFDF /* FYX.framework */; };
 		C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B718C29A9D0018AFDF /* NetworkServices.framework */; };
+		C5EFF6FA18C3DE540012113E /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5EFF6F818C3DE540012113E /* Main-iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		C57810B418C29A9D0018AFDF /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
 		C57810B518C29A9D0018AFDF /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = gimbalSDK/FYX.framework; sourceTree = "<group>"; };
 		C57810B718C29A9D0018AFDF /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
+		C5EFF6F918C3DE540012113E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-iPad.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 		C5EFF6F418C3D45B0012113E /* iPad */ = {
 			isa = PBXGroup;
 			children = (
+				C5EFF6F818C3DE540012113E /* Main-iPad.storyboard */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			files = (
 				8188468918C26ACE00590ECA /* Images.xcassets in Resources */,
 				8188467B18C26ACE00590ECA /* InfoPlist.strings in Resources */,
+				C5EFF6FA18C3DE540012113E /* Main-iPad.storyboard in Resources */,
 				8188468418C26ACE00590ECA /* Main.storyboard in Resources */,
 				C57810BC18C29A9D0018AFDF /* DataModels.bundle in Resources */,
 			);
@@ -504,6 +508,14 @@
 				8188469918C26ACE00590ECA /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C5EFF6F818C3DE540012113E /* Main-iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5EFF6F918C3DE540012113E /* Base */,
+			);
+			name = "Main-iPad.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
