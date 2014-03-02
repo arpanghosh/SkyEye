@@ -13,8 +13,16 @@
 #import "SkyEyeSharedSocket.h"
 #import "SkyEyeMotionDelegate.h"
 #import "SkyEyeStepCountManager.h"
+#import "SkyEyeDroneManager.h"
 
 @interface SkyEyeViewController : UIViewController <FYXServiceDelegate, FYXVisitDelegate, SkyEyeMotionDelegate>
+{
+    NSMutableArray *beaconReadings;
+    UITextView *status;
+    SkyEyeDroneManager *droneManager;
+    
+}
 @property (weak, nonatomic) IBOutlet UITextView *status;
+
 
 @end

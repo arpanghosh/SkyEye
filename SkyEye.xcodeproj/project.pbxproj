@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		097341CD18C2F11500D22321 /* BeaconReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341CC18C2F11500D22321 /* BeaconReading.m */; };
+		097341D118C3055800D22321 /* SkyEyeDroneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341D018C3055800D22321 /* SkyEyeDroneManager.m */; };
 		811CE3D918C2E65E00880C36 /* SkyEyeStepCountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */; };
 		811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */; };
 		8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467018C26ACE00590ECA /* Foundation.framework */; };
@@ -49,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		097341CB18C2F11500D22321 /* BeaconReading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconReading.h; sourceTree = "<group>"; };
+		097341CC18C2F11500D22321 /* BeaconReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconReading.m; sourceTree = "<group>"; };
+		097341CF18C3055800D22321 /* SkyEyeDroneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeDroneManager.h; sourceTree = "<group>"; };
+		097341D018C3055800D22321 /* SkyEyeDroneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeDroneManager.m; sourceTree = "<group>"; };
 		3C926899359542FB82F160FB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7DD919BA653B4A3DBA897F15 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		811CE3D618C2E65E00880C36 /* SkyEyeMotionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeMotionDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		097341CA18C2F0DC00D22321 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				097341CB18C2F11500D22321 /* BeaconReading.h */,
+				097341CC18C2F11500D22321 /* BeaconReading.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		8188466418C26ACE00590ECA = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +186,7 @@
 		8188467618C26ACE00590ECA /* SkyEye */ = {
 			isa = PBXGroup;
 			children = (
+				097341CA18C2F0DC00D22321 /* Models */,
 				811CE3DD18C2EA3E00880C36 /* SkyEyeSharedSocket.h */,
 				811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */,
 				811CE3D618C2E65E00880C36 /* SkyEyeMotionDelegate.h */,
@@ -183,6 +199,8 @@
 				8188468618C26ACE00590ECA /* SkyEyeViewController.m */,
 				8188468818C26ACE00590ECA /* Images.xcassets */,
 				8188467718C26ACE00590ECA /* Supporting Files */,
+				097341CF18C3055800D22321 /* SkyEyeDroneManager.h */,
+				097341D018C3055800D22321 /* SkyEyeDroneManager.m */,
 			);
 			path = SkyEye;
 			sourceTree = "<group>";
@@ -419,8 +437,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097341D118C3055800D22321 /* SkyEyeDroneManager.m in Sources */,
 				8188468118C26ACE00590ECA /* SkyEyeAppDelegate.m in Sources */,
 				811CE3D918C2E65E00880C36 /* SkyEyeStepCountManager.m in Sources */,
+				097341CD18C2F11500D22321 /* BeaconReading.m in Sources */,
 				8188467D18C26ACE00590ECA /* main.m in Sources */,
 				8188468718C26ACE00590ECA /* SkyEyeViewController.m in Sources */,
 				811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */,
@@ -564,6 +584,7 @@
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -586,6 +607,7 @@
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

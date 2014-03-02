@@ -8,6 +8,7 @@
 
 #import "SkyEyeViewController.h"
 #import <FYX/FYXTransmitter.h>
+#import "BeaconReading.h"
 
 @interface SkyEyeViewController ()
 @property (nonatomic) FYXVisitManager *visitManager;
@@ -18,12 +19,16 @@
 
 @synthesize visitManager=_visitManager;
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    beaconReadings = [[NSMutableArray alloc] init];
 	// Do any additional setup after loading the view, typically from a nib.
      [FYX startService:self];
     [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] startTrackingUserStepCountWithDelegate:self];
+    droneManager = [[SkyEyeDroneManager alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,10 +63,34 @@
     // this will be invoked when an authorized transmitter is sighted for the first time
     self.status.text = [self.status.text stringByAppendingFormat:@"\nI arrived at a Gimbal Beacon!!! %@", visit.transmitter.name];
 }
+- (double) calculateMean:(NSArray *)readings offset:(unsigned long)offset count:(int)count;
+{
+    double mean = 0;
+    if([readings count] < count) {
+        return 0;
+    }
+    for(unsigned long i = [readings count] - count; i < [readings count]; i++) {
+        BeaconReading *currentReading = [readings objectAtIndex:i];
+        mean += currentReading.signalStrength;
+    }
+    return mean/count;
+}
+
 - (void)receivedSighting:(FYXVisit *)visit updateTime:(NSDate *)updateTime RSSI:(NSNumber *)RSSI;
 {
     // this will be invoked when an authorized transmitter is sighted during an on-going visit
     self.status.text = [self.status.text stringByAppendingFormat:@"\nI received a sighting!!! %@ RSSI:%@", visit.transmitter.name, RSSI];
+    
+    BeaconReading *r = [[BeaconReading alloc] init];
+    [r setBeaconName:visit.transmitter.name];
+    [r setSignalStrength:[RSSI doubleValue]];
+    [r setTimestamp:updateTime];
+    
+    [beaconReadings addObject:r];
+    
+    double mean = [self calculateMean:beaconReadings offset:[beaconReadings count] - 10 count:10];
+    NSLog(@"Mean is: %f", mean);
+    
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:RSSI forKey:@"beaconData"];
     [dict setObject:visit.transmitter.name forKey:@"beaconID"];
