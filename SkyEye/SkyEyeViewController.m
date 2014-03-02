@@ -78,7 +78,7 @@
 -(void)stepCountUpdated:(NSInteger)stepCount timestamp:(NSDate *)timestamp{
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:[NSNumber numberWithInteger:stepCount] forKey:@"stepCount"];
-    [dict setObject:timestamp forKey:@"stepTimestamp"];
+    [dict setObject:[NSNumber numberWithDouble:[timestamp timeIntervalSince1970]] forKey:@"stepTimestamp"];
     [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stepData" withData:dict];
 }
 
