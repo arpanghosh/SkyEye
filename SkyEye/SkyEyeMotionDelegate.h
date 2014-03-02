@@ -13,4 +13,8 @@
 
 -(void)errorFetchingStepCount:(NSError *)error;
 
+-(void)headingUpdated:(CLHeading *)heading timestamp:(NSDate *)timestamp;
+
+-(void)errorFetchingHeading:(NSError *)error;
+
 @end

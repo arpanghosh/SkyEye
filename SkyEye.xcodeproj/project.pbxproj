@@ -17,6 +17,7 @@
 		811CE3ED18C34A3D00880C36 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107518C286490018AFDF /* libz.dylib */; };
 		811CE3EF18C34A4F00880C36 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE3EE18C34A4F00880C36 /* CoreMotion.framework */; };
 		811CE3F218C36AB100880C36 /* NSString+IPValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3F118C36AB100880C36 /* NSString+IPValidation.m */; };
+		811CE3F518C3A04400880C36 /* SkyEyeHeadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3F418C3A04400880C36 /* SkyEyeHeadingManager.m */; };
 		8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467018C26ACE00590ECA /* Foundation.framework */; };
 		8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467418C26ACE00590ECA /* UIKit.framework */; };
 		8188467B18C26ACE00590ECA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188467918C26ACE00590ECA /* InfoPlist.strings */; };
@@ -67,6 +68,8 @@
 		811CE3EE18C34A4F00880C36 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		811CE3F018C36AB100880C36 /* NSString+IPValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IPValidation.h"; sourceTree = "<group>"; };
 		811CE3F118C36AB100880C36 /* NSString+IPValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IPValidation.m"; sourceTree = "<group>"; };
+		811CE3F318C3A04400880C36 /* SkyEyeHeadingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeHeadingManager.h; sourceTree = "<group>"; };
+		811CE3F418C3A04400880C36 /* SkyEyeHeadingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeHeadingManager.m; sourceTree = "<group>"; };
 		8188466D18C26ACE00590ECA /* SkyEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8188467018C26ACE00590ECA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8188467218C26ACE00590ECA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -201,6 +204,8 @@
 				8188468618C26ACE00590ECA /* SkyEyeViewController.m */,
 				811CE3F018C36AB100880C36 /* NSString+IPValidation.h */,
 				811CE3F118C36AB100880C36 /* NSString+IPValidation.m */,
+				811CE3F318C3A04400880C36 /* SkyEyeHeadingManager.h */,
+				811CE3F418C3A04400880C36 /* SkyEyeHeadingManager.m */,
 				8188468818C26ACE00590ECA /* Images.xcassets */,
 				8188467718C26ACE00590ECA /* Supporting Files */,
 			);
@@ -445,6 +450,7 @@
 				8188467D18C26ACE00590ECA /* main.m in Sources */,
 				8188468718C26ACE00590ECA /* SkyEyeViewController.m in Sources */,
 				811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */,
+				811CE3F518C3A04400880C36 /* SkyEyeHeadingManager.m in Sources */,
 				811CE3E518C33DD800880C36 /* SkyEyeGimbalManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -49,6 +49,7 @@
         [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] startSightingGimbalBeaconsWithDelagate:self
                                                                                andSmoothingMode:self.beaconSmoothingMode];
         [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] startTrackingUserStepCountWithDelegate:self];
+        [[SkyEyeHeadingManager sharedSkyEyeHeadingManager] startTrackingHeadingWithDelegate:self];
     }else{
         dispatch_async(dispatch_get_main_queue(), ^{
             self.nodeIPAddress.text = @"Invalid IP Address";
@@ -61,6 +62,7 @@
     //Send killswitch event on socket
     [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] stopSightingGimbalBeacons];
     [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] stopTrackingUserStepCount];
+    [[SkyEyeHeadingManager sharedSkyEyeHeadingManager] stopTrackingHeading];
     [self updateUIForConfig];
 }
 
@@ -145,6 +147,21 @@
 
 -(void)errorFetchingStepCount:(NSError *)error{
     [self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching step count : %@", error.localizedDescription]];
+}
+
+-(void)headingUpdated:(CLHeading *)heading timestamp:(NSDate *)timestamp{
+    [self updateStatusWithMessage:[NSString stringWithFormat:@"heading updated : %f", heading.magneticHeading]];
+    
+    /*
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:[[NSNumber numberWithInteger:stepCount] stringValue] forKey:@"stepCount"];
+    [dict setObject:[[NSNumber numberWithDouble:[timestamp timeIntervalSince1970]] stringValue] forKey:@"stepTimestamp"];
+    [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stepData" withData:dict];
+     */
+}
+
+-(void)errorFetchingHeading:(NSError *)error{
+    [self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching heading : %@", error.localizedDescription]];
 }
 
 
