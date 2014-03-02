@@ -42,17 +42,17 @@ function PidController(proportionalGain, integralGain, derivativeGain) {
 
 var io = require('socket.io').listen(9000);
 var arDrone = require('ar-drone');
-// var client  = arDrone.createClient();
+var client  = arDrone.createClient();
 var stateVariables = {
   'beaconData': [],
   'coreMotionData': null,
   'droneData': null,
   'stepData': null,
-  'pidController': new PidController(0.1, 0.1, 0.1)
+  'pidController': new PidController(0.1, 0, 0.001)
 };
 var optimalState = {
-  'optimalBeaconDistance': 5.5,
-  'beaconDistanceError': 0.5,
+  'optimalBeaconDistance': 1.4,
+  'beaconDistanceError': 0.005,
   'beaconWindowSize': 8
 };
 
@@ -71,15 +71,19 @@ io.sockets.on('connection', function (socket) {
 
   initializeDrone();
   setInterval(controlDrone,25);
+  setTimeout(shutDownDrone,60000);
 });
 
+var shutDownDrone = function() {
+  client.land();
+}
 // For beacon we are just getting one float, signal strength. May need to de-log this.
 var updateBeaconData = function (beaconData) {
   var timestamp = new Date();
   console.log("beacon Data Recieved is : "+ beaconData['beaconData'] + "from beacon ID :" + beaconData["beaconID"]);
-  stateVariables['beaconData'].push(parseInt(beaconData['beaconData']));
-  if (stateVariables.length > optimalState['beaconWindowSize']) {
-    stateVariables.shift();
+  stateVariables['beaconData'].push(rssiToDist(parseInt(beaconData['beaconData'])));
+  if (stateVariables['beaconData'].length > optimalState['beaconWindowSize']) {
+    stateVariables['beaconData'].shift();
   }
 
   // Attach a timestamp to the receive time and use a moving window
@@ -94,12 +98,10 @@ var updateCoreMotionData = function (coreMotionData) {
 }
 
 function initializeDrone () {
-  // client.takeoff();
+  client.takeoff();
 }
 
 function controlDrone() {
-  var timestamp = new Date();
-
   // Get drone AV Data
 
   // Combine all of our distance metrics into one
@@ -107,7 +109,7 @@ function controlDrone() {
   stateVariables['beaconData'].forEach(function (signalStrength) {
     distance += signalStrength;
   });
-  distance = distance / stateVariables.length;
+  distance = distance / stateVariables['beaconData'].length;
   // TODO: convert this from decibels to distance.
 
   // Calculate Error
@@ -117,14 +119,30 @@ function controlDrone() {
   var horizontalSpeed = stateVariables['pidController'].calculateAdjustment(error, 0.025);
 
   // Send the updated commands to the drone
-  if (horizontalSpeed > optimalState['beaconDistanceError']) {
-    // client.front(horizontalSpeed);
-    console.log('[' + timestamp + ']: F(' + horizontalSpeed + '), dist = ' + distance + ', error = ' + error);
-  } else if (horizontalSpeed < -optimalState['beaconDistanceError']) {
-    // client.back(-horizontalSpeed);
-    console.log('[' + timestamp + ']: B(' + (-horizontalSpeed) + '), dist = ' + distance + ', error = ' + error);
+  safeMoveHorizontal(horizontalSpeed, optimalState['beaconDistanceError'], distance, error);
+}
+
+function rssiToDist(rssi) {
+  var power = (rssi + 70) / (-10 * 4.23);
+  return Math.pow(10, power);
+}
+
+function safeMoveHorizontal(horizontalSpeed, deadZone, distance, error) {
+  var timestamp = new Date();
+
+  if (Math.abs(horizontalSpeed) < 0.2) {
+    // Send the updated commands to the drone
+    if (horizontalSpeed > deadZone) {
+      client.front(horizontalSpeed);
+      console.log('[' + timestamp + ']: F(' + horizontalSpeed + '), dist = ' + distance + ', error = ' + error);
+    } else if (horizontalSpeed < -deadZone) {
+      client.back(-horizontalSpeed);
+      console.log('[' + timestamp + ']: B(' + (-horizontalSpeed) + '), dist = ' + distance + ', error = ' + error);
+    } else {
+      client.stop();
+      console.log('[' + timestamp + ']: Stop(), dist = ' + distance + ', error = ' + error);
+    }
   } else {
-    // client.stop();
-    console.log('[' + timestamp + ']: Stop(), dist = ' + distance + ', error = ' + error);
+    console.log('WARNING: TRYING TO MOVE TOO FAST: ' + horizontalSpeed + ' distance = : '+ distance+' error : '+error);
   }
 }
