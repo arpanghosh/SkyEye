@@ -63,7 +63,7 @@
     // this will be invoked when an authorized transmitter is sighted during an on-going visit
     self.status.text = [self.status.text stringByAppendingFormat:@"\nI received a sighting!!! %@ RSSI:%@", visit.transmitter.name, RSSI];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:RSSI forKey:@"beaconData"];
+    [dict setObject:[RSSI stringValue] forKey:@"beaconData"];
     [dict setObject:visit.transmitter.name forKey:@"beaconID"];
     [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"beaconData" withData:dict];
     
@@ -77,8 +77,8 @@
 
 -(void)stepCountUpdated:(NSInteger)stepCount timestamp:(NSDate *)timestamp{
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:[NSNumber numberWithInteger:stepCount] forKey:@"stepCount"];
-    [dict setObject:[NSNumber numberWithDouble:[timestamp timeIntervalSince1970]] forKey:@"stepTimestamp"];
+    [dict setObject:[[NSNumber numberWithInteger:stepCount] stringValue] forKey:@"stepCount"];
+    [dict setObject:[[NSNumber numberWithDouble:[timestamp timeIntervalSince1970]] stringValue] forKey:@"stepTimestamp"];
     [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stepData" withData:dict];
 }
 
