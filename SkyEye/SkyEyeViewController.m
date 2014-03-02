@@ -149,8 +149,8 @@
     [self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching step count : %@", error.localizedDescription]];
 }
 
--(void)headingUpdated:(CLHeading *)heading timestamp:(NSDate *)timestamp{
-    [self updateStatusWithMessage:[NSString stringWithFormat:@"heading updated : %f", heading.magneticHeading]];
+-(void)headingUpdated:(double )heading timestamp:(NSDate *)timestamp{
+    //[self updateStatusWithMessage:[NSString stringWithFormat:@"heading updated : %f", heading]];
     
     /*
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -161,7 +161,7 @@
 }
 
 -(void)errorFetchingHeading:(NSError *)error{
-    [self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching heading : %@", error.localizedDescription]];
+    //[self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching heading : %@", error.localizedDescription]];
 }
 
 
