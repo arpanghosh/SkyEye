@@ -23,6 +23,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
      [FYX startService:self];
+    [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] startTrackingUserStepCountWithDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,6 +74,19 @@
     self.status.text = [self.status.text stringByAppendingFormat:@"\nI left the proximity of a Gimbal Beacon!!!! %@", visit.transmitter.name];
     self.status.text = [self.status.text stringByAppendingFormat:@"\nI was around the beacon for %f seconds", visit.dwellTime];
 }
+
+-(void)stepCountUpdated:(NSInteger)stepCount timestamp:(NSDate *)timestamp{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:[NSNumber numberWithInteger:stepCount] forKey:@"stepCount"];
+    [dict setObject:timestamp forKey:@"stepTimestamp"];
+    [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stepData" withData:dict];
+}
+
+-(void)errorFetchingStepCount:(NSError *)error{
+    NSLog(@"Error getting step count : %@", error);
+}
+
+
 
 
 @end

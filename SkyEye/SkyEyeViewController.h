@@ -11,8 +11,10 @@
 #import <FYX/FYXVisitManager.h>
 
 #import "SkyEyeSharedSocket.h"
+#import "SkyEyeMotionDelegate.h"
+#import "SkyEyeStepCountManager.h"
 
-@interface SkyEyeViewController : UIViewController <FYXServiceDelegate, FYXVisitDelegate>
+@interface SkyEyeViewController : UIViewController <FYXServiceDelegate, FYXVisitDelegate, SkyEyeMotionDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *status;
 
 @end
