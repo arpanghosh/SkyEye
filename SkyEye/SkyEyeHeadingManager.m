@@ -75,11 +75,12 @@ typedef enum{
     @synchronized(self.headingStream){
         averageHeading = [self averageHeadingWindow];
     }
+    /*
     NSLog(@"Avg. heading readings : %f", averageHeading);
     NSLog(@"Significant Heading : %f", self.significantHeading);
     NSLog(@"Running Heading : %f", self.runningHeading);
     NSLog(@"State : %d", self.state);
-    
+    */
     switch (self.state) {
         case waitingForFirstHeading:
             self.significantHeading = averageHeading;
