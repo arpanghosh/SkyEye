@@ -46,4 +46,8 @@
     [self.socket sendEvent:eventName withData:data];
 }
 
+-(void)disconnect{
+    [self.socket disconnect];
+}
+
 @end

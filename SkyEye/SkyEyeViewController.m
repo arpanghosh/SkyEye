@@ -65,6 +65,7 @@
     //[[SkyEyeStepCountManager sharedSkyEyeStepCountManager] stopTrackingUserStepCount];
     //[[SkyEyeHeadingManager sharedSkyEyeHeadingManager] stopTrackingHeading];
     [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stopDrone" withData:nil];
+    [[SkyEyeSharedSocket getSharedSkyEyeSocket] disconnect];
     [self updateUIForConfig];
 }
 

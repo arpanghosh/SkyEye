@@ -14,4 +14,6 @@
 
 -(void)sendEvent:(NSString *)eventName withData:(NSDictionary *)data;
 
+-(void)disconnect;
+
 @end
