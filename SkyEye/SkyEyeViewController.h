@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <FYX/FYX.h>
 #import <FYX/FYXVisitManager.h>
-#import "SocketIO.h"
+
+#import "SkyEyeSharedSocket.h"
 
 @interface SkyEyeViewController : UIViewController <FYXServiceDelegate, FYXVisitDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *status;
-@property (strong, nonatomic) SocketIO *socketIO;
 
 @end

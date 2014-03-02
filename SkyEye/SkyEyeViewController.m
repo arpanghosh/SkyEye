@@ -8,7 +8,6 @@
 
 #import "SkyEyeViewController.h"
 #import <FYX/FYXTransmitter.h>
-#import "SocketIO.h"
 
 @interface SkyEyeViewController ()
 @property (nonatomic) FYXVisitManager *visitManager;
@@ -24,9 +23,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
      [FYX startService:self];
-    // Connect to the node socketIO server
-    self.socketIO = [[SocketIO alloc] initWithDelegate:Nil];
-    [self.socketIO connectToHost:@"192.168.1.2" onPort:9000];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +64,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:RSSI forKey:@"beaconData"];
     [dict setObject:visit.transmitter.name forKey:@"beaconID"];
-    [self.socketIO sendEvent:@"beaconData" withData:dict];
+    [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"beaconData" withData:dict];
     
 }
 - (void)didDepart:(FYXVisit *)visit;

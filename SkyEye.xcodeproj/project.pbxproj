@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		811CE3D918C2E65E00880C36 /* SkyEyeStepCountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */; };
+		811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */; };
 		8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467018C26ACE00590ECA /* Foundation.framework */; };
 		8188467318C26ACE00590ECA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467218C26ACE00590ECA /* CoreGraphics.framework */; };
 		8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467418C26ACE00590ECA /* UIKit.framework */; };
@@ -53,6 +54,8 @@
 		811CE3D618C2E65E00880C36 /* SkyEyeMotionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeMotionDelegate.h; sourceTree = "<group>"; };
 		811CE3D718C2E65E00880C36 /* SkyEyeStepCountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeStepCountManager.h; sourceTree = "<group>"; };
 		811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeStepCountManager.m; sourceTree = "<group>"; };
+		811CE3DD18C2EA3E00880C36 /* SkyEyeSharedSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeSharedSocket.h; sourceTree = "<group>"; };
+		811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeSharedSocket.m; sourceTree = "<group>"; };
 		8188466D18C26ACE00590ECA /* SkyEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8188467018C26ACE00590ECA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8188467218C26ACE00590ECA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -168,6 +171,8 @@
 		8188467618C26ACE00590ECA /* SkyEye */ = {
 			isa = PBXGroup;
 			children = (
+				811CE3DD18C2EA3E00880C36 /* SkyEyeSharedSocket.h */,
+				811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */,
 				811CE3D618C2E65E00880C36 /* SkyEyeMotionDelegate.h */,
 				811CE3D718C2E65E00880C36 /* SkyEyeStepCountManager.h */,
 				811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */,
@@ -418,6 +423,7 @@
 				811CE3D918C2E65E00880C36 /* SkyEyeStepCountManager.m in Sources */,
 				8188467D18C26ACE00590ECA /* main.m in Sources */,
 				8188468718C26ACE00590ECA /* SkyEyeViewController.m in Sources */,
+				811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
