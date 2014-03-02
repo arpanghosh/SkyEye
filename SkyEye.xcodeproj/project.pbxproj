@@ -188,6 +188,7 @@
 		8188467618C26ACE00590ECA /* SkyEye */ = {
 			isa = PBXGroup;
 			children = (
+				C5EFF6F418C3D45B0012113E /* iPad */,
 				811CE3E018C336A600880C36 /* SkyEyeConstants.h */,
 				811CE3DD18C2EA3E00880C36 /* SkyEyeSharedSocket.h */,
 				811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */,
@@ -308,6 +309,13 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C5EFF6F418C3D45B0012113E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -592,7 +600,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -615,7 +625,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
