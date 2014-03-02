@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0059)http://www.flotcharts.org/flot/examples/realtime/index.html -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Flot Examples: Real-time updates</title>
+    <link href="./flot-example_files/examples.css" rel="stylesheet" type="text/css">
+
+    <!-- Dependencies. -->
+    <script
+        language="javascript"
+        type="text/javascript"
+        src="./flot-example_files/jquery.js">
+    </script>
+    <style type="text/css"></style>
+    <script
+        language="javascript"
+        type="text/javascript"
+        src="./flot-example_files/jquery.flot.js">
+    </script>
+    <script
+        language="javascript"
+        type="text/javascript"
+        src="./droneController.js">
+    </script>
+
+    <!-- Flot chart code. -->
+    <script type="text/javascript">
+      // Runs this code after page load.
+      $(function() {
+        // Data buffers:
+        var distanceData = [];
+        var errorData = [];
+        var adjustmentData = [];
+
+        // Set up the plot widget
+        var plot = $.plot(
+            "#placeholder",
+            [distanceData, errorData, adjustmentData],
+            {
+              series: {
+                shadowSize: 0	// Drawing is faster without shadows
+              },
+              yaxis: {
+                min: -20,
+                max: 20
+              },
+              xaxis: {
+                show: false
+              }
+            }
+        );
+
+        // Add the Flot version string to the footer
+        $("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
+
+        // Setup the callback such that it appends data as received.
+        function plotData(distance, error, adjustent) {
+          // Store incomming data in appropriate buffers.
+          distanceData.push(distance);
+          errorData.push(error);
+          adjustmentData.push(adjustent);
+
+          // Update the plot with new incoming data. Since the axes don't change, we don't need to
+          // call plot.setupGrid().
+          plot.setData([distanceData, errorData, adjustmentData]);
+          plot.draw();
+
+        }
+
+        // Create & start the controller.
+        var controller = new DroneController(
+            new PidController(0.1, 0, 0.001),
+            1.4,
+            0.005,
+            8,
+            plotData
+        );
+        controller.start(9000);
+      });
+	</script>
+<style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style></head>
+<body>
+
+	<div id="header">
+		<h2>Real-time updates</h2>
+	</div>
+
+	<div id="content">
+
+		<div class="demo-container">
+			<div id="placeholder" class="demo-placeholder" style="padding: 0px; position: relative;"><canvas class="flot-base" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 818px; height: 413px;" width="818" height="413"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 397px; left: 16px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 318px; left: 9px; text-align: right;">20</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 238px; left: 9px; text-align: right;">40</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 159px; left: 9px; text-align: right;">60</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 79px; left: 9px; text-align: right;">80</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 2px; text-align: right;">100</div></div></div><canvas class="flot-overlay" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 818px; height: 413px;" width="818" height="413"></canvas></div>
+		</div>
+
+		<p>You can update a chart periodically to get a real-time effect by using a timer to insert the new data in the plot and redraw it.</p>
+
+		<p>Time between updates: <input id="updateInterval" type="text" value="" style="text-align: right; width:5em"> milliseconds</p>
+
+	</div>
+
+	<div id="footer">Flot 0.8.2 – 
+		Copyright © 2007 - 2013 IOLA and Ole Laursen
+	</div>
+
+
+
+</body></html>

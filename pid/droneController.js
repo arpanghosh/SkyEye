@@ -50,14 +50,17 @@ function DroneController(
     pidController,
     trackingDistance,
     trackingDeadzone,
-    smoothingWindowSize
+    smoothingWindowSize,
+    plottingCallback
 ) {
   var self = this;
 
   // Store parameters.
+  self.pidController = pidController;
   self.trackingDistance = trackingDistance;
   self.trackingDeadzone = trackingDeadzone;
   self.smoothingWindowSize = smoothingWindowSize;
+  self.plottingCallback
 
   // Setup state variables.
   self.beaconData = [];
@@ -122,6 +125,9 @@ function DroneController(
       // Calculate adjustments, the new horizontal speed
       var horizontalSpeed = self.pidController.calculateAdjustment(error, 0.025);
 
+      // Call control callback.
+      self.plottingCallback(distance, error, horizontalSpeed);
+
       // Send the updated commands to the drone
       safeMoveHorizontal(horizontalSpeed, self.trackingDeadzone, distance, error);
     }
@@ -145,14 +151,21 @@ function DroneController(
       console.log('Socket.io connected.');
 
       // Start the drone, setup the control loop, and register a shutdown callback.
-      initializeDrone();
+      startDrone();
       setInterval(controlDrone, 25);
-      setTimeout(shutDownDrone, 60000);
+      setTimeout(stopDrone, 60000);
     });
   }
 }
 
 
 // Create a new drone controller and start it.
-var controller = new DroneController(new PidController(0.1, 0, 0.001), 1.4, 0.005, 8);
-controller.start(9000);
+// NOTE: COMMENT THESE OUT BEFORE USING THIS IN THE FLOT PLOTTER.
+// var controller = new DroneController(
+//     new PidController(0.1, 0, 0.001),
+//     1.4,
+//     0.005,
+//     8,
+//     function() { }
+// );
+// controller.start(9000);
