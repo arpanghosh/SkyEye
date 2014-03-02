@@ -1,611 +1,1475 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467018C26ACE00590ECA /* Foundation.framework */; };
-		8188467318C26ACE00590ECA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467218C26ACE00590ECA /* CoreGraphics.framework */; };
-		8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467418C26ACE00590ECA /* UIKit.framework */; };
-		8188467B18C26ACE00590ECA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188467918C26ACE00590ECA /* InfoPlist.strings */; };
-		8188467D18C26ACE00590ECA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188467C18C26ACE00590ECA /* main.m */; };
-		8188468118C26ACE00590ECA /* SkyEyeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188468018C26ACE00590ECA /* SkyEyeAppDelegate.m */; };
-		8188468418C26ACE00590ECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8188468218C26ACE00590ECA /* Main.storyboard */; };
-		8188468718C26ACE00590ECA /* SkyEyeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188468618C26ACE00590ECA /* SkyEyeViewController.m */; };
-		8188468918C26ACE00590ECA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8188468818C26ACE00590ECA /* Images.xcassets */; };
-		8188469018C26ACE00590ECA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188468F18C26ACE00590ECA /* XCTest.framework */; };
-		8188469118C26ACE00590ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467018C26ACE00590ECA /* Foundation.framework */; };
-		8188469218C26ACE00590ECA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467418C26ACE00590ECA /* UIKit.framework */; };
-		8188469A18C26ACE00590ECA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188469818C26ACE00590ECA /* InfoPlist.strings */; };
-		8188469C18C26ACE00590ECA /* SkyEyeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188469B18C26ACE00590ECA /* SkyEyeTests.m */; };
-		C578107018C284570018AFDF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578106F18C284570018AFDF /* CoreBluetooth.framework */; };
-		C578107318C284710018AFDF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107118C284710018AFDF /* CoreData.framework */; };
-		C578107418C284710018AFDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107218C284710018AFDF /* CoreLocation.framework */; };
-		C578107618C2864A0018AFDF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107518C286490018AFDF /* libz.dylib */; };
-		C578107818C286550018AFDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107718C286550018AFDF /* MapKit.framework */; };
-		C578107A18C2865D0018AFDF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107918C2865D0018AFDF /* Security.framework */; };
-		C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AC18C29A9D0018AFDF /* Common.framework */; };
-		C57810BA18C29A9D0018AFDF /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AF18C29A9D0018AFDF /* ContextCore.framework */; };
-		C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B218C29A9D0018AFDF /* ContextLocation.framework */; };
-		C57810BC18C29A9D0018AFDF /* DataModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C57810B418C29A9D0018AFDF /* DataModels.bundle */; };
-		C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B518C29A9D0018AFDF /* FYX.framework */; };
-		C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B718C29A9D0018AFDF /* NetworkServices.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		8188469318C26ACE00590ECA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8188466518C26ACE00590ECA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8188466C18C26ACE00590ECA;
-			remoteInfo = SkyEye;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		8188466D18C26ACE00590ECA /* SkyEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8188467018C26ACE00590ECA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8188467218C26ACE00590ECA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8188467418C26ACE00590ECA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		8188467818C26ACE00590ECA /* SkyEye-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkyEye-Info.plist"; sourceTree = "<group>"; };
-		8188467A18C26ACE00590ECA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8188467C18C26ACE00590ECA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8188467E18C26ACE00590ECA /* SkyEye-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SkyEye-Prefix.pch"; sourceTree = "<group>"; };
-		8188467F18C26ACE00590ECA /* SkyEyeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyEyeAppDelegate.h; sourceTree = "<group>"; };
-		8188468018C26ACE00590ECA /* SkyEyeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyEyeAppDelegate.m; sourceTree = "<group>"; };
-		8188468318C26ACE00590ECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8188468518C26ACE00590ECA /* SkyEyeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyEyeViewController.h; sourceTree = "<group>"; };
-		8188468618C26ACE00590ECA /* SkyEyeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyEyeViewController.m; sourceTree = "<group>"; };
-		8188468818C26ACE00590ECA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		8188468E18C26ACE00590ECA /* SkyEyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyEyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8188468F18C26ACE00590ECA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		8188469718C26ACE00590ECA /* SkyEyeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SkyEyeTests-Info.plist"; sourceTree = "<group>"; };
-		8188469918C26ACE00590ECA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8188469B18C26ACE00590ECA /* SkyEyeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyEyeTests.m; sourceTree = "<group>"; };
-		C578106F18C284570018AFDF /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		C578107118C284710018AFDF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		C578107218C284710018AFDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		C578107518C286490018AFDF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		C578107718C286550018AFDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		C578107918C2865D0018AFDF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		C57810AC18C29A9D0018AFDF /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Common.framework; sourceTree = "<group>"; };
-		C57810AF18C29A9D0018AFDF /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextCore.framework; sourceTree = "<group>"; };
-		C57810B218C29A9D0018AFDF /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ContextLocation.framework; sourceTree = "<group>"; };
-		C57810B418C29A9D0018AFDF /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
-		C57810B518C29A9D0018AFDF /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = gimbalSDK/FYX.framework; sourceTree = "<group>"; };
-		C57810B718C29A9D0018AFDF /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		8188466A18C26ACE00590ECA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */,
-				C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */,
-				C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */,
-				C578107A18C2865D0018AFDF /* Security.framework in Frameworks */,
-				C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */,
-				C578107818C286550018AFDF /* MapKit.framework in Frameworks */,
-				C578107618C2864A0018AFDF /* libz.dylib in Frameworks */,
-				C578107318C284710018AFDF /* CoreData.framework in Frameworks */,
-				C578107418C284710018AFDF /* CoreLocation.framework in Frameworks */,
-				C57810BA18C29A9D0018AFDF /* ContextCore.framework in Frameworks */,
-				C578107018C284570018AFDF /* CoreBluetooth.framework in Frameworks */,
-				8188467318C26ACE00590ECA /* CoreGraphics.framework in Frameworks */,
-				8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */,
-				8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8188468B18C26ACE00590ECA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8188469018C26ACE00590ECA /* XCTest.framework in Frameworks */,
-				8188469218C26ACE00590ECA /* UIKit.framework in Frameworks */,
-				8188469118C26ACE00590ECA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		8188466418C26ACE00590ECA = {
-			isa = PBXGroup;
-			children = (
-				8188467618C26ACE00590ECA /* SkyEye */,
-				8188469518C26ACE00590ECA /* SkyEyeTests */,
-				8188466F18C26ACE00590ECA /* Frameworks */,
-				8188466E18C26ACE00590ECA /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		8188466E18C26ACE00590ECA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8188466D18C26ACE00590ECA /* SkyEye.app */,
-				8188468E18C26ACE00590ECA /* SkyEyeTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		8188466F18C26ACE00590ECA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C57810AB18C29A9D0018AFDF /* Common.embeddedframework */,
-				C57810AE18C29A9D0018AFDF /* ContextCore.embeddedframework */,
-				C57810B118C29A9D0018AFDF /* ContextLocation.embeddedframework */,
-				C57810B518C29A9D0018AFDF /* FYX.framework */,
-				C57810B618C29A9D0018AFDF /* NetworkServices.embeddedframework */,
-				C578107918C2865D0018AFDF /* Security.framework */,
-				C578107718C286550018AFDF /* MapKit.framework */,
-				C578107518C286490018AFDF /* libz.dylib */,
-				C578107118C284710018AFDF /* CoreData.framework */,
-				C578107218C284710018AFDF /* CoreLocation.framework */,
-				C578106F18C284570018AFDF /* CoreBluetooth.framework */,
-				8188467018C26ACE00590ECA /* Foundation.framework */,
-				8188467218C26ACE00590ECA /* CoreGraphics.framework */,
-				8188467418C26ACE00590ECA /* UIKit.framework */,
-				8188468F18C26ACE00590ECA /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8188467618C26ACE00590ECA /* SkyEye */ = {
-			isa = PBXGroup;
-			children = (
-				8188467F18C26ACE00590ECA /* SkyEyeAppDelegate.h */,
-				8188468018C26ACE00590ECA /* SkyEyeAppDelegate.m */,
-				8188468218C26ACE00590ECA /* Main.storyboard */,
-				8188468518C26ACE00590ECA /* SkyEyeViewController.h */,
-				8188468618C26ACE00590ECA /* SkyEyeViewController.m */,
-				8188468818C26ACE00590ECA /* Images.xcassets */,
-				8188467718C26ACE00590ECA /* Supporting Files */,
-			);
-			path = SkyEye;
-			sourceTree = "<group>";
-		};
-		8188467718C26ACE00590ECA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8188467818C26ACE00590ECA /* SkyEye-Info.plist */,
-				8188467918C26ACE00590ECA /* InfoPlist.strings */,
-				8188467C18C26ACE00590ECA /* main.m */,
-				8188467E18C26ACE00590ECA /* SkyEye-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8188469518C26ACE00590ECA /* SkyEyeTests */ = {
-			isa = PBXGroup;
-			children = (
-				8188469B18C26ACE00590ECA /* SkyEyeTests.m */,
-				8188469618C26ACE00590ECA /* Supporting Files */,
-			);
-			path = SkyEyeTests;
-			sourceTree = "<group>";
-		};
-		8188469618C26ACE00590ECA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8188469718C26ACE00590ECA /* SkyEyeTests-Info.plist */,
-				8188469818C26ACE00590ECA /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C57810AB18C29A9D0018AFDF /* Common.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C57810AC18C29A9D0018AFDF /* Common.framework */,
-				C57810AD18C29A9D0018AFDF /* Resources */,
-			);
-			name = Common.embeddedframework;
-			path = gimbalSDK/Common.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C57810AD18C29A9D0018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C57810AE18C29A9D0018AFDF /* ContextCore.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C57810AF18C29A9D0018AFDF /* ContextCore.framework */,
-				C57810B018C29A9D0018AFDF /* Resources */,
-			);
-			name = ContextCore.embeddedframework;
-			path = gimbalSDK/ContextCore.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C57810B018C29A9D0018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C57810B118C29A9D0018AFDF /* ContextLocation.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C57810B218C29A9D0018AFDF /* ContextLocation.framework */,
-				C57810B318C29A9D0018AFDF /* Resources */,
-			);
-			name = ContextLocation.embeddedframework;
-			path = gimbalSDK/ContextLocation.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C57810B318C29A9D0018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C57810B418C29A9D0018AFDF /* DataModels.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C57810B618C29A9D0018AFDF /* NetworkServices.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				C57810B718C29A9D0018AFDF /* NetworkServices.framework */,
-				C57810B818C29A9D0018AFDF /* Resources */,
-			);
-			name = NetworkServices.embeddedframework;
-			path = gimbalSDK/NetworkServices.embeddedframework;
-			sourceTree = "<group>";
-		};
-		C57810B818C29A9D0018AFDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		8188466C18C26ACE00590ECA /* SkyEye */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8188469F18C26ACE00590ECA /* Build configuration list for PBXNativeTarget "SkyEye" */;
-			buildPhases = (
-				8188466918C26ACE00590ECA /* Sources */,
-				8188466A18C26ACE00590ECA /* Frameworks */,
-				8188466B18C26ACE00590ECA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SkyEye;
-			productName = SkyEye;
-			productReference = 8188466D18C26ACE00590ECA /* SkyEye.app */;
-			productType = "com.apple.product-type.application";
-		};
-		8188468D18C26ACE00590ECA /* SkyEyeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 818846A218C26ACE00590ECA /* Build configuration list for PBXNativeTarget "SkyEyeTests" */;
-			buildPhases = (
-				8188468A18C26ACE00590ECA /* Sources */,
-				8188468B18C26ACE00590ECA /* Frameworks */,
-				8188468C18C26ACE00590ECA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8188469418C26ACE00590ECA /* PBXTargetDependency */,
-			);
-			name = SkyEyeTests;
-			productName = SkyEyeTests;
-			productReference = 8188468E18C26ACE00590ECA /* SkyEyeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		8188466518C26ACE00590ECA /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = SkyEye;
-				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = SkyEye;
-				TargetAttributes = {
-					8188468D18C26ACE00590ECA = {
-						TestTargetID = 8188466C18C26ACE00590ECA;
-					};
-				};
-			};
-			buildConfigurationList = 8188466818C26ACE00590ECA /* Build configuration list for PBXProject "SkyEye" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 8188466418C26ACE00590ECA;
-			productRefGroup = 8188466E18C26ACE00590ECA /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				8188466C18C26ACE00590ECA /* SkyEye */,
-				8188468D18C26ACE00590ECA /* SkyEyeTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		8188466B18C26ACE00590ECA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8188468918C26ACE00590ECA /* Images.xcassets in Resources */,
-				8188467B18C26ACE00590ECA /* InfoPlist.strings in Resources */,
-				8188468418C26ACE00590ECA /* Main.storyboard in Resources */,
-				C57810BC18C29A9D0018AFDF /* DataModels.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8188468C18C26ACE00590ECA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8188469A18C26ACE00590ECA /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		8188466918C26ACE00590ECA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8188468118C26ACE00590ECA /* SkyEyeAppDelegate.m in Sources */,
-				8188467D18C26ACE00590ECA /* main.m in Sources */,
-				8188468718C26ACE00590ECA /* SkyEyeViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8188468A18C26ACE00590ECA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8188469C18C26ACE00590ECA /* SkyEyeTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8188469418C26ACE00590ECA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8188466C18C26ACE00590ECA /* SkyEye */;
-			targetProxy = 8188469318C26ACE00590ECA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8188467918C26ACE00590ECA /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8188467A18C26ACE00590ECA /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		8188468218C26ACE00590ECA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8188468318C26ACE00590ECA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8188469818C26ACE00590ECA /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8188469918C26ACE00590ECA /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		8188469D18C26ACE00590ECA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		8188469E18C26ACE00590ECA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		818846A018C26ACE00590ECA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					gimbalSDK,
-					gimbalSDK/Common.embeddedframework,
-					gimbalSDK/ContextCore.embeddedframework,
-					gimbalSDK/ContextLocation.embeddedframework,
-					gimbalSDK/NetworkServices.embeddedframework,
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
-				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		818846A118C26ACE00590ECA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					gimbalSDK,
-					gimbalSDK/Common.embeddedframework,
-					gimbalSDK/ContextCore.embeddedframework,
-					gimbalSDK/ContextLocation.embeddedframework,
-					gimbalSDK/NetworkServices.embeddedframework,
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
-				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		818846A318C26ACE00590ECA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkyEye.app/SkyEye";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "SkyEyeTests/SkyEyeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		818846A418C26ACE00590ECA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SkyEye.app/SkyEye";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
-				INFOPLIST_FILE = "SkyEyeTests/SkyEyeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		8188466818C26ACE00590ECA /* Build configuration list for PBXProject "SkyEye" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8188469D18C26ACE00590ECA /* Debug */,
-				8188469E18C26ACE00590ECA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8188469F18C26ACE00590ECA /* Build configuration list for PBXNativeTarget "SkyEye" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				818846A018C26ACE00590ECA /* Debug */,
-				818846A118C26ACE00590ECA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		818846A218C26ACE00590ECA /* Build configuration list for PBXNativeTarget "SkyEyeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				818846A318C26ACE00590ECA /* Debug */,
-				818846A418C26ACE00590ECA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 8188466518C26ACE00590ECA /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>3C926899359542FB82F160FB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7DD919BA653B4A3DBA897F15</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>8188466418C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8188467618C26ACE00590ECA</string>
+				<string>8188469518C26ACE00590ECA</string>
+				<string>8188466F18C26ACE00590ECA</string>
+				<string>8188466E18C26ACE00590ECA</string>
+				<string>3C926899359542FB82F160FB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188466518C26ACE00590ECA</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>SkyEye</string>
+				<key>LastUpgradeCheck</key>
+				<string>0500</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>SkyEye</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>8188468D18C26ACE00590ECA</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>8188466C18C26ACE00590ECA</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>8188466818C26ACE00590ECA</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>8188466418C26ACE00590ECA</string>
+			<key>productRefGroup</key>
+			<string>8188466E18C26ACE00590ECA</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>8188466C18C26ACE00590ECA</string>
+				<string>8188468D18C26ACE00590ECA</string>
+			</array>
+		</dict>
+		<key>8188466818C26ACE00590ECA</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>8188469D18C26ACE00590ECA</string>
+				<string>8188469E18C26ACE00590ECA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>8188466918C26ACE00590ECA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8188468118C26ACE00590ECA</string>
+				<string>8188467D18C26ACE00590ECA</string>
+				<string>8188468718C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8188466A18C26ACE00590ECA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C57810B918C29A9D0018AFDF</string>
+				<string>C57810BE18C29A9D0018AFDF</string>
+				<string>C57810BB18C29A9D0018AFDF</string>
+				<string>C578107A18C2865D0018AFDF</string>
+				<string>C57810BD18C29A9D0018AFDF</string>
+				<string>C578107818C286550018AFDF</string>
+				<string>C578107618C2864A0018AFDF</string>
+				<string>C578107318C284710018AFDF</string>
+				<string>C578107418C284710018AFDF</string>
+				<string>C57810BA18C29A9D0018AFDF</string>
+				<string>C578107018C284570018AFDF</string>
+				<string>8188467318C26ACE00590ECA</string>
+				<string>8188467518C26ACE00590ECA</string>
+				<string>8188467118C26ACE00590ECA</string>
+				<string>A5815496B69348C28816964C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8188466B18C26ACE00590ECA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8188468918C26ACE00590ECA</string>
+				<string>8188467B18C26ACE00590ECA</string>
+				<string>8188468418C26ACE00590ECA</string>
+				<string>C57810BC18C29A9D0018AFDF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8188466C18C26ACE00590ECA</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>8188469F18C26ACE00590ECA</string>
+			<key>buildPhases</key>
+			<array>
+				<string>AA87EBDD3F7A42C38833424B</string>
+				<string>8188466918C26ACE00590ECA</string>
+				<string>8188466A18C26ACE00590ECA</string>
+				<string>8188466B18C26ACE00590ECA</string>
+				<string>A6B52DDCF2AC4435B650B918</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>SkyEye</string>
+			<key>productName</key>
+			<string>SkyEye</string>
+			<key>productReference</key>
+			<string>8188466D18C26ACE00590ECA</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>8188466D18C26ACE00590ECA</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>SkyEye.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>8188466E18C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8188466D18C26ACE00590ECA</string>
+				<string>8188468E18C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188466F18C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C57810AB18C29A9D0018AFDF</string>
+				<string>C57810AE18C29A9D0018AFDF</string>
+				<string>C57810B118C29A9D0018AFDF</string>
+				<string>C57810B518C29A9D0018AFDF</string>
+				<string>C57810B618C29A9D0018AFDF</string>
+				<string>C578107918C2865D0018AFDF</string>
+				<string>C578107718C286550018AFDF</string>
+				<string>C578107518C286490018AFDF</string>
+				<string>C578107118C284710018AFDF</string>
+				<string>C578107218C284710018AFDF</string>
+				<string>C578106F18C284570018AFDF</string>
+				<string>8188467018C26ACE00590ECA</string>
+				<string>8188467218C26ACE00590ECA</string>
+				<string>8188467418C26ACE00590ECA</string>
+				<string>8188468F18C26ACE00590ECA</string>
+				<string>7DD919BA653B4A3DBA897F15</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188467018C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>8188467118C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188467018C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188467218C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>8188467318C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188467218C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188467418C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>8188467518C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188467418C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188467618C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8188467F18C26ACE00590ECA</string>
+				<string>8188468018C26ACE00590ECA</string>
+				<string>8188468218C26ACE00590ECA</string>
+				<string>8188468518C26ACE00590ECA</string>
+				<string>8188468618C26ACE00590ECA</string>
+				<string>8188468818C26ACE00590ECA</string>
+				<string>8188467718C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>SkyEye</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188467718C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8188467818C26ACE00590ECA</string>
+				<string>8188467918C26ACE00590ECA</string>
+				<string>8188467C18C26ACE00590ECA</string>
+				<string>8188467E18C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188467818C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>SkyEye-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188467918C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8188467A18C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188467A18C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188467B18C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188467918C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188467C18C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188467D18C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188467C18C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188467E18C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SkyEye-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188467F18C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SkyEyeAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188468018C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SkyEyeAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188468118C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188468018C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188468218C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8188468318C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188468318C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188468418C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188468218C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188468518C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SkyEyeViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188468618C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SkyEyeViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188468718C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188468618C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188468818C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188468918C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188468818C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188468A18C26ACE00590ECA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8188469C18C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8188468B18C26ACE00590ECA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8188469018C26ACE00590ECA</string>
+				<string>8188469218C26ACE00590ECA</string>
+				<string>8188469118C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8188468C18C26ACE00590ECA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8188469A18C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8188468D18C26ACE00590ECA</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>818846A218C26ACE00590ECA</string>
+			<key>buildPhases</key>
+			<array>
+				<string>8188468A18C26ACE00590ECA</string>
+				<string>8188468B18C26ACE00590ECA</string>
+				<string>8188468C18C26ACE00590ECA</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>8188469418C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>SkyEyeTests</string>
+			<key>productName</key>
+			<string>SkyEyeTests</string>
+			<key>productReference</key>
+			<string>8188468E18C26ACE00590ECA</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>8188468E18C26ACE00590ECA</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>SkyEyeTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>8188468F18C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>8188469018C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188468F18C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188469118C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188467018C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188469218C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188467418C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188469318C26ACE00590ECA</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>8188466518C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>8188466C18C26ACE00590ECA</string>
+			<key>remoteInfo</key>
+			<string>SkyEye</string>
+		</dict>
+		<key>8188469418C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>8188466C18C26ACE00590ECA</string>
+			<key>targetProxy</key>
+			<string>8188469318C26ACE00590ECA</string>
+		</dict>
+		<key>8188469518C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8188469B18C26ACE00590ECA</string>
+				<string>8188469618C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>SkyEyeTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188469618C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8188469718C26ACE00590ECA</string>
+				<string>8188469818C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188469718C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>SkyEyeTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188469818C26ACE00590ECA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8188469918C26ACE00590ECA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188469918C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188469A18C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188469818C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188469B18C26ACE00590ECA</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>SkyEyeTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8188469C18C26ACE00590ECA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8188469B18C26ACE00590ECA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8188469D18C26ACE00590ECA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>8188469E18C26ACE00590ECA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>8188469F18C26ACE00590ECA</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>818846A018C26ACE00590ECA</string>
+				<string>818846A118C26ACE00590ECA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>818846A018C26ACE00590ECA</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>3C926899359542FB82F160FB</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>gimbalSDK</string>
+					<string>gimbalSDK/Common.embeddedframework</string>
+					<string>gimbalSDK/ContextCore.embeddedframework</string>
+					<string>gimbalSDK/ContextLocation.embeddedframework</string>
+					<string>gimbalSDK/NetworkServices.embeddedframework</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>SkyEye/SkyEye-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>SkyEye/SkyEye-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>818846A118C26ACE00590ECA</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>3C926899359542FB82F160FB</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>gimbalSDK</string>
+					<string>gimbalSDK/Common.embeddedframework</string>
+					<string>gimbalSDK/ContextCore.embeddedframework</string>
+					<string>gimbalSDK/ContextLocation.embeddedframework</string>
+					<string>gimbalSDK/NetworkServices.embeddedframework</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>SkyEye/SkyEye-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>SkyEye/SkyEye-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>818846A218C26ACE00590ECA</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>818846A318C26ACE00590ECA</string>
+				<string>818846A418C26ACE00590ECA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>818846A318C26ACE00590ECA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/SkyEye.app/SkyEye</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>SkyEye/SkyEye-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>SkyEyeTests/SkyEyeTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>818846A418C26ACE00590ECA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/SkyEye.app/SkyEye</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>SkyEye/SkyEye-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>SkyEyeTests/SkyEyeTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>A5815496B69348C28816964C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7DD919BA653B4A3DBA897F15</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A6B52DDCF2AC4435B650B918</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>AA87EBDD3F7A42C38833424B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>C578106F18C284570018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreBluetooth.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreBluetooth.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>C578107018C284570018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C578106F18C284570018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C578107118C284710018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreData.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreData.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>C578107218C284710018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreLocation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreLocation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>C578107318C284710018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C578107118C284710018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C578107418C284710018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C578107218C284710018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C578107518C286490018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>compiled.mach-o.dylib</string>
+			<key>name</key>
+			<string>libz.dylib</string>
+			<key>path</key>
+			<string>usr/lib/libz.dylib</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>C578107618C2864A0018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C578107518C286490018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C578107718C286550018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>MapKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/MapKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>C578107818C286550018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C578107718C286550018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C578107918C2865D0018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Security.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Security.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>C578107A18C2865D0018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C578107918C2865D0018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C57810AB18C29A9D0018AFDF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C57810AC18C29A9D0018AFDF</string>
+				<string>C57810AD18C29A9D0018AFDF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Common.embeddedframework</string>
+			<key>path</key>
+			<string>gimbalSDK/Common.embeddedframework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810AC18C29A9D0018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>path</key>
+			<string>Common.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810AD18C29A9D0018AFDF</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810AE18C29A9D0018AFDF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C57810AF18C29A9D0018AFDF</string>
+				<string>C57810B018C29A9D0018AFDF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ContextCore.embeddedframework</string>
+			<key>path</key>
+			<string>gimbalSDK/ContextCore.embeddedframework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810AF18C29A9D0018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>path</key>
+			<string>ContextCore.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B018C29A9D0018AFDF</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B118C29A9D0018AFDF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C57810B218C29A9D0018AFDF</string>
+				<string>C57810B318C29A9D0018AFDF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ContextLocation.embeddedframework</string>
+			<key>path</key>
+			<string>gimbalSDK/ContextLocation.embeddedframework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B218C29A9D0018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>path</key>
+			<string>ContextLocation.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B318C29A9D0018AFDF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C57810B418C29A9D0018AFDF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B418C29A9D0018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.plug-in</string>
+			<key>path</key>
+			<string>DataModels.bundle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B518C29A9D0018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>FYX.framework</string>
+			<key>path</key>
+			<string>gimbalSDK/FYX.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B618C29A9D0018AFDF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C57810B718C29A9D0018AFDF</string>
+				<string>C57810B818C29A9D0018AFDF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>NetworkServices.embeddedframework</string>
+			<key>path</key>
+			<string>gimbalSDK/NetworkServices.embeddedframework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B718C29A9D0018AFDF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>path</key>
+			<string>NetworkServices.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B818C29A9D0018AFDF</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C57810B918C29A9D0018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C57810AC18C29A9D0018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C57810BA18C29A9D0018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C57810AF18C29A9D0018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C57810BB18C29A9D0018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C57810B218C29A9D0018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C57810BC18C29A9D0018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C57810B418C29A9D0018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C57810BD18C29A9D0018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C57810B518C29A9D0018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C57810BE18C29A9D0018AFDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C57810B718C29A9D0018AFDF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>8188466518C26ACE00590ECA</string>
+</dict>
+</plist>
