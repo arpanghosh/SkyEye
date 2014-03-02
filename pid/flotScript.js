@@ -27,11 +27,11 @@
         $("#footer").prepend("Flot " + $.plot.version + " &ndash; ");
 
         // Setup the callback such that it appends data as received.
-        function plotData(distance, error, adjustent) {
+        function plotData(distance, error, adjustment) {
           // Store incomming data in appropriate buffers.
           distanceData.push(distance);
           errorData.push(error);
-          adjustmentData.push(adjustent);
+          adjustmentData.push(adjustment);
 
           // Update the plot with new incoming data. Since the axes don't change, we don't need to
           // call plot.setupGrid().
@@ -40,7 +40,14 @@
 
         }
 
-        // Create & start the controller.
-        controller.setPlottingCallback(plotData);
+        function updatePlot(plotData) {
+        }
+
+        // Setup the connection to the backend.
+        var socket = io.connect('http://localhost:9001');
+        console.log('server connected.');
+        socket.on('plotData', function (data) {
+          // Unpack incoming data.
+          plotData(plotData.distance, plotData.error, plotData.adjustment);
+        });
       });
-    

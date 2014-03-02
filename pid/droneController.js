@@ -215,11 +215,17 @@ DroneController = function (
 
 // Create a new drone controller and start it.
 // NOTE: COMMENT THESE OUT BEFORE USING THIS IN THE FLOT PLOTTER.
- var controller = new DroneController(
-     new PidController(0.1, 0, 0.001),
-     1.4,
-     0.005,
-     32,
-     function() { }
- );
- controller.start(9000);
+io.listen(9001)
+    .sockets.on('connection', function(socket) {
+      var controller = new DroneController(
+          new PidController(0.1, 0, 0.001),
+          1.4,
+          0.005,
+          32,
+          function(d, e, a) {
+            socket.emit('plotData', { distance: d, error: e, adjustment: a });
+          }
+      );
+      controller.start(9000);
+    });
+
