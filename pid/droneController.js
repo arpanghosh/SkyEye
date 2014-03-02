@@ -23,7 +23,7 @@ function PidController(proportionalGain, integralGain, derivativeGain) {
   self.lastError = 0.0;
 
   // Functions.
-  self.calculateAdjustment = function(error, delta_time) {
+  self.calculateAdjustment = function(error, deltaTime) {
     // Calculate terms.
     var proportionalTerm = self.PROPORTIONAL_GAIN * error;
     var integralTerm = self.INTEGRAL_GAIN * (self.totalError + error * deltaTime);
@@ -33,7 +33,7 @@ function PidController(proportionalGain, integralGain, derivativeGain) {
     self.totalError = self.totalError + error * deltaTime;
     self.lastError = error;
 
-    return proportional_term + integral_term + derivative_term;
+    return proportionalTerm + integralTerm + derivativeTerm;
   };
 }
 
@@ -47,6 +47,7 @@ var stateVariables = {
   'beaconData': [],
   'coreMotionData': null,
   'droneData': null,
+  'stepData': null,
   'pidController': new PidController(0.1, 0.1, 0.1)
 };
 var optimalState = {
@@ -64,7 +65,8 @@ console.log('Waiting for socket.io connection...');
 // initialize the calback functions, and initialize the drone
 io.sockets.on('connection', function (socket) {
   socket.on('beaconData', updateBeaconData);
-  socket.on('coreMotionData', updateMotionData);
+  socket.on('coreMotionData', updateCoreMotionData);
+  socket.on('stepData', updateStepData)
   console.log('Socket.io connected.');
 
   initializeDrone();
@@ -74,8 +76,8 @@ io.sockets.on('connection', function (socket) {
 // For beacon we are just getting one float, signal strength. May need to de-log this.
 var updateBeaconData = function (beaconData) {
   var timestamp = new Date();
-
-  stateVariables['beaconData'].push(JSON.parse(beaconData).beaconData);
+  console.log("beacon Data Recieved is : "+ beaconData['beaconData'] + "from beacon ID :" + beaconData["beaconID"]);
+  stateVariables['beaconData'].push(parseInt(beaconData['beaconData']));
   if (stateVariables.length > optimalState['beaconWindowSize']) {
     stateVariables.shift();
   }
@@ -83,9 +85,12 @@ var updateBeaconData = function (beaconData) {
   // Attach a timestamp to the receive time and use a moving window
 }
 
+var updateStepData = function (stepData) {
+  console.log("Step Data Recieved : "+stepData);
+}
 // For core motion we should get two 3d vectors
 var updateCoreMotionData = function (coreMotionData) {
-  stateVariables['coreMotionData'] =  JSON.parse(coreMotionData);
+  stateVariables['coreMotionData'] =  coreMotionData;
 }
 
 function initializeDrone () {
@@ -99,7 +104,7 @@ function controlDrone() {
 
   // Combine all of our distance metrics into one
   var distance = 0.0;
-  stateVariables.forEach(function (signalStrength) {
+  stateVariables['beaconData'].forEach(function (signalStrength) {
     distance += signalStrength;
   });
   distance = distance / stateVariables.length;

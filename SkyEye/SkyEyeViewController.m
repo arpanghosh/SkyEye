@@ -10,14 +10,7 @@
 #import <FYX/FYXTransmitter.h>
 #import "BeaconReading.h"
 
-@interface SkyEyeViewController ()
-@property (nonatomic) FYXVisitManager *visitManager;
-
-@end
-
 @implementation SkyEyeViewController
-
-@synthesize visitManager=_visitManager;
 
 
 
@@ -29,40 +22,92 @@
      [FYX startService:self];
     [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] startTrackingUserStepCountWithDelegate:self];
     droneManager = [[SkyEyeDroneManager alloc] init];
+
+- (BOOL)isValidIpAddress:(NSString *)ip {
+    const char *utf8 = [ip UTF8String];
+    
+    // Check valid IPv4.
+    struct in_addr dst;
+    int success = inet_pton(AF_INET, utf8, &(dst.s_addr));
+    if (success != 1) {
+        // Check valid IPv6.
+        struct in6_addr dst6;
+        success = inet_pton(AF_INET6, utf8, &dst6);
+    }
+    return (success == 1);
+
 }
 
-- (void)didReceiveMemoryWarning
+
+
+- (IBAction)startDrone {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([self.nodeIPAddress.text isValidIPAddress]) {
+        [defaults setValue:self.nodeIPAddress.text forKey:@"sky_eye_node_ip"];
+        [self updateUIForPilotingDrone];
+        [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] startSightingGimbalBeaconsWithDelagate:self
+                                                                               andSmoothingMode:self.beaconSmoothingMode];
+        [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] startTrackingUserStepCountWithDelegate:self];
+        [[SkyEyeHeadingManager sharedSkyEyeHeadingManager] startTrackingHeadingWithDelegate:self];
+    }else{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.nodeIPAddress.text = @"Invalid IP Address";
+            self.nodeIPAddress.textColor = [UIColor redColor];
+        });
+    }
+}
+
+- (IBAction)stopDrone {
+    //Send killswitch event on socket
+    [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] stopSightingGimbalBeacons];
+    [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] stopTrackingUserStepCount];
+    [[SkyEyeHeadingManager sharedSkyEyeHeadingManager] stopTrackingHeading];
+    [self updateUIForConfig];
+}
+
+
+- (void)updateUIForPilotingDrone{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.nodeIPAddress.hidden = YES;
+        self.smoothingSelector.hidden = YES;
+        self.startButton.hidden = YES;
+        self.smoothingLabel.hidden = YES;
+        self.status.hidden = NO;
+        self.killSwitch.hidden = NO;
+        [self.killSwitch setType:BButtonTypeDanger];
+    });
+}
+
+
+- (void)updateUIForConfig{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *nodeIP = [defaults objectForKey:@"sky_eye_node_ip"];
+    if (nodeIP) {
+        self.nodeIPAddress.text = nodeIP;
+    }
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.nodeIPAddress.hidden = NO;
+        self.smoothingSelector.hidden = NO;
+        self.startButton.hidden = NO;
+        self.smoothingLabel.hidden = NO;
+        [self.startButton setType:BButtonTypePrimary];
+        self.status.hidden = YES;
+        self.killSwitch.hidden = YES;
+    });
+}
+
+
+- (void)viewDidLoad
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    [self updateUIForConfig];
+    self.smoothingSelector.delegate = self;
+    self.smoothingSelector.dataSource = self;
+    self.nodeIPAddress.delegate = self;
 }
 
-#pragma mark - Gimbal service
-
-- (void)serviceStarted
-{
-    // this will be invoked if the service has successfully started
-    // bluetooth scanning will be started at this point.
-    self.status.text = [self.status.text stringByAppendingString:@"FYX Service Successfully Started"];
-    self.visitManager = [FYXVisitManager new];
-    self.visitManager.delegate = self;
-    [self.visitManager start];
-
-}
-
-- (void)startServiceFailed:(NSError *)error
-{
-    // this will be called if the service has failed to start
-    self.status.text = [self.status.text stringByAppendingFormat:@"Error: %@", error];
-}
-
-#pragma mark - Gimbal bluetooth scan
-
-- (void)didArrive:(FYXVisit *)visit;
-{
-    // this will be invoked when an authorized transmitter is sighted for the first time
-    self.status.text = [self.status.text stringByAppendingFormat:@"\nI arrived at a Gimbal Beacon!!! %@", visit.transmitter.name];
-}
 - (double) calculateMean:(NSArray *)readings offset:(unsigned long)offset count:(int)count;
 {
     double mean = 0;
@@ -76,10 +121,21 @@
     return mean/count;
 }
 
-- (void)receivedSighting:(FYXVisit *)visit updateTime:(NSDate *)updateTime RSSI:(NSNumber *)RSSI;
-{
-    // this will be invoked when an authorized transmitter is sighted during an on-going visit
-    self.status.text = [self.status.text stringByAppendingFormat:@"\nI received a sighting!!! %@ RSSI:%@", visit.transmitter.name, RSSI];
+
+
+-(void)updateStatusWithMessage:(NSString *)message{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.status.text = [self.status.text stringByAppendingFormat:@"\n%@",message];
+        [self.status scrollRangeToVisible:NSMakeRange(self.status.text.length, 0)];
+    });
+}
+
+
+#pragma mark - SkyEyeBeaconDelegate methods
+
+-(void)sightedBeacon:(NSString *)transmitterName RSSI:(NSNumber *)rssi timestamp:(NSDate *)timestamp{
+    
+
     
     BeaconReading *r = [[BeaconReading alloc] init];
     [r setBeaconName:visit.transmitter.name];
@@ -89,33 +145,126 @@
     [beaconReadings addObject:r];
     
     double mean = [self calculateMean:beaconReadings offset:[beaconReadings count] - 10 count:10];
-    NSLog(@"Mean is: %f", mean);
+    [self updateStatusWithMessage:[NSString stringWithFormat:@"Beacon sighting: %@ RSSI %@, mean: %@", transmitterName, rssi, mean]];
+    
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:RSSI forKey:@"beaconData"];
-    [dict setObject:visit.transmitter.name forKey:@"beaconID"];
+    [dict setObject:[rssi stringValue] forKey:@"beaconData"];
+    [dict setObject:transmitterName forKey:@"beaconID"];
     [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"beaconData" withData:dict];
-    
-}
-- (void)didDepart:(FYXVisit *)visit;
-{
-    // this will be invoked when an authorized transmitter has not been sighted for some time
-    self.status.text = [self.status.text stringByAppendingFormat:@"\nI left the proximity of a Gimbal Beacon!!!! %@", visit.transmitter.name];
-    self.status.text = [self.status.text stringByAppendingFormat:@"\nI was around the beacon for %f seconds", visit.dwellTime];
+
 }
 
+-(void)errorSightingBeacons:(NSError *)error{
+    [self updateStatusWithMessage:[NSString stringWithFormat:@"Error sighting beacons : %@", error.localizedDescription]];
+}
+
+
+#pragma mark - SkyEyeMotionDelegate methods
+
 -(void)stepCountUpdated:(NSInteger)stepCount timestamp:(NSDate *)timestamp{
+    [self updateStatusWithMessage:[NSString stringWithFormat:@"Step count updated : %ld", (long)stepCount]];
+    
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setObject:[NSNumber numberWithInteger:stepCount] forKey:@"stepCount"];
-    [dict setObject:[NSNumber numberWithDouble:[timestamp timeIntervalSince1970]] forKey:@"stepTimestamp"];
+    [dict setObject:[[NSNumber numberWithInteger:stepCount] stringValue] forKey:@"stepCount"];
+    [dict setObject:[[NSNumber numberWithDouble:[timestamp timeIntervalSince1970]] stringValue] forKey:@"stepTimestamp"];
     [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stepData" withData:dict];
 }
 
 -(void)errorFetchingStepCount:(NSError *)error{
-    NSLog(@"Error getting step count : %@", error);
+    [self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching step count : %@", error.localizedDescription]];
+}
+
+-(void)headingUpdated:(CLHeading *)heading timestamp:(NSDate *)timestamp{
+    [self updateStatusWithMessage:[NSString stringWithFormat:@"heading updated : %f", heading.magneticHeading]];
+    
+    /*
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:[[NSNumber numberWithInteger:stepCount] stringValue] forKey:@"stepCount"];
+    [dict setObject:[[NSNumber numberWithDouble:[timestamp timeIntervalSince1970]] stringValue] forKey:@"stepTimestamp"];
+    [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stepData" withData:dict];
+     */
+}
+
+-(void)errorFetchingHeading:(NSError *)error{
+    [self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching heading : %@", error.localizedDescription]];
 }
 
 
+#pragma mark - UIPickerViewDataSource methods
 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return 4;
+}
+
+
+#pragma mark - UIPickerViewDelegate methods
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 30.0f;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
+    return 320.0f;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    switch (row) {
+        case 0:
+            return @"None";
+            break;
+        case 1:
+            return @"Small";
+            break;
+        case 2:
+            return @"Medium";
+            break;
+        case 3:
+            return @"Large";
+            break;
+        default:
+            return @"";
+            break;
+    }
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    switch (row) {
+        case 0:
+            self.beaconSmoothingMode = FYXSightingOptionSignalStrengthWindowNone;
+            break;
+        case 1:
+            self.beaconSmoothingMode = FYXSightingOptionSignalStrengthWindowSmall;
+            break;
+        case 2:
+            self.beaconSmoothingMode = FYXSightingOptionSignalStrengthWindowMedium;
+            break;
+        case 3:
+            self.beaconSmoothingMode = FYXSightingOptionSignalStrengthWindowLarge;
+            break;
+        default:
+            self.beaconSmoothingMode = FYXSightingOptionSignalStrengthWindowNone;
+            break;
+    }
+}
+
+#pragma mark - UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return NO;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        textField.text = @"";
+        textField.textColor = [UIColor blackColor];
+    });
+    return YES;
+}
 
 @end

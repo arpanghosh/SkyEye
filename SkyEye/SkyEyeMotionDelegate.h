@@ -6,13 +6,15 @@
 //  Copyright (c) 2014 SkyEye. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreMotion/CoreMotion.h>
 
 @protocol SkyEyeMotionDelegate <NSObject>
 
 -(void)stepCountUpdated:(NSInteger)stepCount timestamp:(NSDate *)timestamp;
 
 -(void)errorFetchingStepCount:(NSError *)error;
+
+-(void)headingUpdated:(CLHeading *)heading timestamp:(NSDate *)timestamp;
+
+-(void)errorFetchingHeading:(NSError *)error;
 
 @end

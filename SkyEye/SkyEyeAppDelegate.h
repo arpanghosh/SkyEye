@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 SkyEye. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
 @interface SkyEyeAppDelegate : UIResponder <UIApplicationDelegate>
 
