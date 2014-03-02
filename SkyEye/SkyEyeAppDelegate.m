@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [FYX setAppId:@"ac4a8f59850cc6031d0786d111f748e8dc391b25a9eee44bdfc0e9f9fa58f332" appSecret:@"3d9f817c64ae3b5fbdccbb32bec8f18f961f8549b44546d934b801a2c389e1c0" callbackUrl:@"skyeye://authcode"];
+    [FYX setAppId:@"c504da86c837f025231cfa52e8e50a2047d721ed1f368269598b03791cb5aadc" appSecret:@"d8930921a00a7c4ad9b647357ce16b2c7c73ee2e6c874584a7f6f4916b7029d4" callbackUrl:@"skyeye://authcode"];
     
     return YES;
 }
