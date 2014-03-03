@@ -7,19 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		097341EA18C3C01600D22321 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 097341DC18C3C01600D22321 /* Contents.json */; };
-		097341EB18C3C01600D22321 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 097341DD18C3C01600D22321 /* Contents.json */; };
-		097341EC18C3C01600D22321 /* NSString+IPValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341DF18C3C01600D22321 /* NSString+IPValidation.m */; };
-		097341ED18C3C01600D22321 /* SkyEyeGimbalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341E318C3C01600D22321 /* SkyEyeGimbalManager.m */; };
-		097341EE18C3C01600D22321 /* SkyEyeHeadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341E518C3C01600D22321 /* SkyEyeHeadingManager.m */; };
-		097341EF18C3C01600D22321 /* BeaconReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341E718C3C01600D22321 /* BeaconReading.m */; };
-		097341F018C3C01600D22321 /* SkyEyeDroneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341E918C3C01600D22321 /* SkyEyeDroneManager.m */; };
-		09F6B8DB18C3F98B000513DA /* libARDroneEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F6B8DA18C3F98B000513DA /* libARDroneEngine.a */; };
-		09F6B8DE18C40356000513DA /* FiniteStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F6B8DD18C40356000513DA /* FiniteStateMachine.m */; };
+		09F6B8E018C407C9000513DA /* libARDroneEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F6B8DF18C407C9000513DA /* libARDroneEngine.a */; };
+		09F6B8E718C407F4000513DA /* BeaconReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F6B8E218C407F4000513DA /* BeaconReading.m */; };
+		09F6B8E818C407F4000513DA /* FiniteStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F6B8E418C407F4000513DA /* FiniteStateMachine.m */; };
+		09F6B8E918C407F4000513DA /* SkyEyeDroneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F6B8E618C407F4000513DA /* SkyEyeDroneManager.m */; };
 		811CE3D918C2E65E00880C36 /* SkyEyeStepCountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */; };
 		811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */; };
+		811CE3E518C33DD800880C36 /* SkyEyeGimbalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3E418C33DD800880C36 /* SkyEyeGimbalManager.m */; };
+		811CE3E718C3498500880C36 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578106F18C284570018AFDF /* CoreBluetooth.framework */; };
+		811CE3E818C3499500880C36 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467218C26ACE00590ECA /* CoreGraphics.framework */; };
+		811CE3EA18C349CD00880C36 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE3E918C349CD00880C36 /* MobileCoreServices.framework */; };
+		811CE3EC18C349F700880C36 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE3EB18C349F700880C36 /* SystemConfiguration.framework */; };
+		811CE3ED18C34A3D00880C36 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107518C286490018AFDF /* libz.dylib */; };
+		811CE3EF18C34A4F00880C36 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811CE3EE18C34A4F00880C36 /* CoreMotion.framework */; };
+		811CE3F218C36AB100880C36 /* NSString+IPValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3F118C36AB100880C36 /* NSString+IPValidation.m */; };
+		811CE3F518C3A04400880C36 /* SkyEyeHeadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3F418C3A04400880C36 /* SkyEyeHeadingManager.m */; };
 		8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467018C26ACE00590ECA /* Foundation.framework */; };
-		8188467318C26ACE00590ECA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467218C26ACE00590ECA /* CoreGraphics.framework */; };
 		8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467418C26ACE00590ECA /* UIKit.framework */; };
 		8188467B18C26ACE00590ECA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188467918C26ACE00590ECA /* InfoPlist.strings */; };
 		8188467D18C26ACE00590ECA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188467C18C26ACE00590ECA /* main.m */; };
@@ -33,18 +36,14 @@
 		8188469A18C26ACE00590ECA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8188469818C26ACE00590ECA /* InfoPlist.strings */; };
 		8188469C18C26ACE00590ECA /* SkyEyeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8188469B18C26ACE00590ECA /* SkyEyeTests.m */; };
 		A5815496B69348C28816964C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD919BA653B4A3DBA897F15 /* libPods.a */; };
-		C578107018C284570018AFDF /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578106F18C284570018AFDF /* CoreBluetooth.framework */; };
 		C578107318C284710018AFDF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107118C284710018AFDF /* CoreData.framework */; };
 		C578107418C284710018AFDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107218C284710018AFDF /* CoreLocation.framework */; };
-		C578107618C2864A0018AFDF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107518C286490018AFDF /* libz.dylib */; };
-		C578107818C286550018AFDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107718C286550018AFDF /* MapKit.framework */; };
 		C578107A18C2865D0018AFDF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C578107918C2865D0018AFDF /* Security.framework */; };
 		C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AC18C29A9D0018AFDF /* Common.framework */; };
-		C57810BA18C29A9D0018AFDF /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810AF18C29A9D0018AFDF /* ContextCore.framework */; };
-		C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B218C29A9D0018AFDF /* ContextLocation.framework */; };
 		C57810BC18C29A9D0018AFDF /* DataModels.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C57810B418C29A9D0018AFDF /* DataModels.bundle */; };
 		C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B518C29A9D0018AFDF /* FYX.framework */; };
 		C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57810B718C29A9D0018AFDF /* NetworkServices.framework */; };
+		C5EFF6FA18C3DE540012113E /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5EFF6F818C3DE540012113E /* Main-iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,23 +57,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		097341DC18C3C01600D22321 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Contents.json; path = Images.xcassets/AppIcon.appiconset/Contents.json; sourceTree = "<group>"; };
-		097341DD18C3C01600D22321 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Contents.json; path = Images.xcassets/LaunchImage.launchimage/Contents.json; sourceTree = "<group>"; };
-		097341DE18C3C01600D22321 /* NSString+IPValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IPValidation.h"; sourceTree = "<group>"; };
-		097341DF18C3C01600D22321 /* NSString+IPValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IPValidation.m"; sourceTree = "<group>"; };
-		097341E018C3C01600D22321 /* SkyEyeBeaconDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeBeaconDelegate.h; sourceTree = "<group>"; };
-		097341E118C3C01600D22321 /* SkyEyeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeConstants.h; sourceTree = "<group>"; };
-		097341E218C3C01600D22321 /* SkyEyeGimbalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeGimbalManager.h; sourceTree = "<group>"; };
-		097341E318C3C01600D22321 /* SkyEyeGimbalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeGimbalManager.m; sourceTree = "<group>"; };
-		097341E418C3C01600D22321 /* SkyEyeHeadingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeHeadingManager.h; sourceTree = "<group>"; };
-		097341E518C3C01600D22321 /* SkyEyeHeadingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeHeadingManager.m; sourceTree = "<group>"; };
-		097341E618C3C01600D22321 /* BeaconReading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconReading.h; sourceTree = "<group>"; };
-		097341E718C3C01600D22321 /* BeaconReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconReading.m; sourceTree = "<group>"; };
-		097341E818C3C01600D22321 /* SkyEyeDroneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeDroneManager.h; sourceTree = "<group>"; };
-		097341E918C3C01600D22321 /* SkyEyeDroneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeDroneManager.m; sourceTree = "<group>"; };
-		09F6B8DA18C3F98B000513DA /* libARDroneEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libARDroneEngine.a; path = ../ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release/libARDroneEngine.a; sourceTree = "<group>"; };
-		09F6B8DC18C40356000513DA /* FiniteStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiniteStateMachine.h; sourceTree = "<group>"; };
-		09F6B8DD18C40356000513DA /* FiniteStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiniteStateMachine.m; sourceTree = "<group>"; };
+		09F6B8DF18C407C9000513DA /* libARDroneEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libARDroneEngine.a; path = ../ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release/libARDroneEngine.a; sourceTree = "<group>"; };
+		09F6B8E118C407F4000513DA /* BeaconReading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconReading.h; path = SkyEye/BeaconReading.h; sourceTree = "<group>"; };
+		09F6B8E218C407F4000513DA /* BeaconReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconReading.m; path = SkyEye/BeaconReading.m; sourceTree = "<group>"; };
+		09F6B8E318C407F4000513DA /* FiniteStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FiniteStateMachine.h; path = SkyEye/FiniteStateMachine.h; sourceTree = "<group>"; };
+		09F6B8E418C407F4000513DA /* FiniteStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FiniteStateMachine.m; path = SkyEye/FiniteStateMachine.m; sourceTree = "<group>"; };
+		09F6B8E518C407F4000513DA /* SkyEyeDroneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SkyEyeDroneManager.h; path = SkyEye/SkyEyeDroneManager.h; sourceTree = "<group>"; };
+		09F6B8E618C407F4000513DA /* SkyEyeDroneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SkyEyeDroneManager.m; path = SkyEye/SkyEyeDroneManager.m; sourceTree = "<group>"; };
 		3C926899359542FB82F160FB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7DD919BA653B4A3DBA897F15 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		811CE3D618C2E65E00880C36 /* SkyEyeMotionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeMotionDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +71,17 @@
 		811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeStepCountManager.m; sourceTree = "<group>"; };
 		811CE3DD18C2EA3E00880C36 /* SkyEyeSharedSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeSharedSocket.h; sourceTree = "<group>"; };
 		811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeSharedSocket.m; sourceTree = "<group>"; };
+		811CE3E018C336A600880C36 /* SkyEyeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeConstants.h; sourceTree = "<group>"; };
+		811CE3E318C33DD800880C36 /* SkyEyeGimbalManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeGimbalManager.h; sourceTree = "<group>"; };
+		811CE3E418C33DD800880C36 /* SkyEyeGimbalManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeGimbalManager.m; sourceTree = "<group>"; };
+		811CE3E618C341CE00880C36 /* SkyEyeBeaconDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyEyeBeaconDelegate.h; sourceTree = "<group>"; };
+		811CE3E918C349CD00880C36 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		811CE3EB18C349F700880C36 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		811CE3EE18C34A4F00880C36 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		811CE3F018C36AB100880C36 /* NSString+IPValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IPValidation.h"; sourceTree = "<group>"; };
+		811CE3F118C36AB100880C36 /* NSString+IPValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IPValidation.m"; sourceTree = "<group>"; };
+		811CE3F318C3A04400880C36 /* SkyEyeHeadingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeHeadingManager.h; sourceTree = "<group>"; };
+		811CE3F418C3A04400880C36 /* SkyEyeHeadingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeHeadingManager.m; sourceTree = "<group>"; };
 		8188466D18C26ACE00590ECA /* SkyEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8188467018C26ACE00590ECA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8188467218C26ACE00590ECA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,6 +113,7 @@
 		C57810B418C29A9D0018AFDF /* DataModels.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DataModels.bundle; sourceTree = "<group>"; };
 		C57810B518C29A9D0018AFDF /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = gimbalSDK/FYX.framework; sourceTree = "<group>"; };
 		C57810B718C29A9D0018AFDF /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NetworkServices.framework; sourceTree = "<group>"; };
+		C5EFF6F918C3DE540012113E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main-iPad.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,21 +121,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09F6B8DB18C3F98B000513DA /* libARDroneEngine.a in Frameworks */,
-				C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */,
-				C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */,
-				C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */,
-				C578107A18C2865D0018AFDF /* Security.framework in Frameworks */,
-				C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */,
-				C578107818C286550018AFDF /* MapKit.framework in Frameworks */,
-				C578107618C2864A0018AFDF /* libz.dylib in Frameworks */,
-				C578107318C284710018AFDF /* CoreData.framework in Frameworks */,
+				09F6B8E018C407C9000513DA /* libARDroneEngine.a in Frameworks */,
+				811CE3EF18C34A4F00880C36 /* CoreMotion.framework in Frameworks */,
+				811CE3ED18C34A3D00880C36 /* libz.dylib in Frameworks */,
+				811CE3E818C3499500880C36 /* CoreGraphics.framework in Frameworks */,
+				811CE3E718C3498500880C36 /* CoreBluetooth.framework in Frameworks */,
 				C578107418C284710018AFDF /* CoreLocation.framework in Frameworks */,
-				C57810BA18C29A9D0018AFDF /* ContextCore.framework in Frameworks */,
-				C578107018C284570018AFDF /* CoreBluetooth.framework in Frameworks */,
-				8188467318C26ACE00590ECA /* CoreGraphics.framework in Frameworks */,
-				8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */,
+				C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */,
+				C578107318C284710018AFDF /* CoreData.framework in Frameworks */,
+				C57810BD18C29A9D0018AFDF /* FYX.framework in Frameworks */,
 				8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */,
+				811CE3EA18C349CD00880C36 /* MobileCoreServices.framework in Frameworks */,
+				C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */,
+				C578107A18C2865D0018AFDF /* Security.framework in Frameworks */,
+				811CE3EC18C349F700880C36 /* SystemConfiguration.framework in Frameworks */,
+				8188467518C26ACE00590ECA /* UIKit.framework in Frameworks */,
 				A5815496B69348C28816964C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +156,12 @@
 		8188466418C26ACE00590ECA = {
 			isa = PBXGroup;
 			children = (
+				09F6B8E118C407F4000513DA /* BeaconReading.h */,
+				09F6B8E218C407F4000513DA /* BeaconReading.m */,
+				09F6B8E318C407F4000513DA /* FiniteStateMachine.h */,
+				09F6B8E418C407F4000513DA /* FiniteStateMachine.m */,
+				09F6B8E518C407F4000513DA /* SkyEyeDroneManager.h */,
+				09F6B8E618C407F4000513DA /* SkyEyeDroneManager.m */,
 				8188467618C26ACE00590ECA /* SkyEye */,
 				8188469518C26ACE00590ECA /* SkyEyeTests */,
 				8188466F18C26ACE00590ECA /* Frameworks */,
@@ -175,7 +182,10 @@
 		8188466F18C26ACE00590ECA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				09F6B8DA18C3F98B000513DA /* libARDroneEngine.a */,
+				09F6B8DF18C407C9000513DA /* libARDroneEngine.a */,
+				811CE3EE18C34A4F00880C36 /* CoreMotion.framework */,
+				811CE3EB18C349F700880C36 /* SystemConfiguration.framework */,
+				811CE3E918C349CD00880C36 /* MobileCoreServices.framework */,
 				C57810AB18C29A9D0018AFDF /* Common.embeddedframework */,
 				C57810AE18C29A9D0018AFDF /* ContextCore.embeddedframework */,
 				C57810B118C29A9D0018AFDF /* ContextLocation.embeddedframework */,
@@ -199,32 +209,25 @@
 		8188467618C26ACE00590ECA /* SkyEye */ = {
 			isa = PBXGroup;
 			children = (
-				09F6B8DC18C40356000513DA /* FiniteStateMachine.h */,
-				09F6B8DD18C40356000513DA /* FiniteStateMachine.m */,
-				097341DC18C3C01600D22321 /* Contents.json */,
-				097341DD18C3C01600D22321 /* Contents.json */,
-				097341DE18C3C01600D22321 /* NSString+IPValidation.h */,
-				097341DF18C3C01600D22321 /* NSString+IPValidation.m */,
-				097341E018C3C01600D22321 /* SkyEyeBeaconDelegate.h */,
-				097341E118C3C01600D22321 /* SkyEyeConstants.h */,
-				097341E218C3C01600D22321 /* SkyEyeGimbalManager.h */,
-				097341E318C3C01600D22321 /* SkyEyeGimbalManager.m */,
-				097341E418C3C01600D22321 /* SkyEyeHeadingManager.h */,
-				097341E518C3C01600D22321 /* SkyEyeHeadingManager.m */,
-				097341E618C3C01600D22321 /* BeaconReading.h */,
-				097341E718C3C01600D22321 /* BeaconReading.m */,
-				097341E818C3C01600D22321 /* SkyEyeDroneManager.h */,
-				097341E918C3C01600D22321 /* SkyEyeDroneManager.m */,
+				C5EFF6F418C3D45B0012113E /* iPad */,
+				811CE3E018C336A600880C36 /* SkyEyeConstants.h */,
 				811CE3DD18C2EA3E00880C36 /* SkyEyeSharedSocket.h */,
 				811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */,
 				811CE3D618C2E65E00880C36 /* SkyEyeMotionDelegate.h */,
+				811CE3E618C341CE00880C36 /* SkyEyeBeaconDelegate.h */,
 				811CE3D718C2E65E00880C36 /* SkyEyeStepCountManager.h */,
 				811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */,
+				811CE3E318C33DD800880C36 /* SkyEyeGimbalManager.h */,
+				811CE3E418C33DD800880C36 /* SkyEyeGimbalManager.m */,
 				8188467F18C26ACE00590ECA /* SkyEyeAppDelegate.h */,
 				8188468018C26ACE00590ECA /* SkyEyeAppDelegate.m */,
 				8188468218C26ACE00590ECA /* Main.storyboard */,
 				8188468518C26ACE00590ECA /* SkyEyeViewController.h */,
 				8188468618C26ACE00590ECA /* SkyEyeViewController.m */,
+				811CE3F018C36AB100880C36 /* NSString+IPValidation.h */,
+				811CE3F118C36AB100880C36 /* NSString+IPValidation.m */,
+				811CE3F318C3A04400880C36 /* SkyEyeHeadingManager.h */,
+				811CE3F418C3A04400880C36 /* SkyEyeHeadingManager.m */,
 				8188468818C26ACE00590ECA /* Images.xcassets */,
 				8188467718C26ACE00590ECA /* Supporting Files */,
 			);
@@ -329,6 +332,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		C5EFF6F418C3D45B0012113E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				C5EFF6F818C3DE540012113E /* Main-iPad.storyboard */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,12 +419,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097341EA18C3C01600D22321 /* Contents.json in Resources */,
 				8188468918C26ACE00590ECA /* Images.xcassets in Resources */,
 				8188467B18C26ACE00590ECA /* InfoPlist.strings in Resources */,
+				C5EFF6FA18C3DE540012113E /* Main-iPad.storyboard in Resources */,
 				8188468418C26ACE00590ECA /* Main.storyboard in Resources */,
 				C57810BC18C29A9D0018AFDF /* DataModels.bundle in Resources */,
-				097341EB18C3C01600D22321 /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,17 +475,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097341F018C3C01600D22321 /* SkyEyeDroneManager.m in Sources */,
+				09F6B8E818C407F4000513DA /* FiniteStateMachine.m in Sources */,
 				8188468118C26ACE00590ECA /* SkyEyeAppDelegate.m in Sources */,
 				811CE3D918C2E65E00880C36 /* SkyEyeStepCountManager.m in Sources */,
+				811CE3F218C36AB100880C36 /* NSString+IPValidation.m in Sources */,
 				8188467D18C26ACE00590ECA /* main.m in Sources */,
 				8188468718C26ACE00590ECA /* SkyEyeViewController.m in Sources */,
-				097341ED18C3C01600D22321 /* SkyEyeGimbalManager.m in Sources */,
 				811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */,
-				09F6B8DE18C40356000513DA /* FiniteStateMachine.m in Sources */,
-				097341EE18C3C01600D22321 /* SkyEyeHeadingManager.m in Sources */,
-				097341EC18C3C01600D22321 /* NSString+IPValidation.m in Sources */,
-				097341EF18C3C01600D22321 /* BeaconReading.m in Sources */,
+				811CE3F518C3A04400880C36 /* SkyEyeHeadingManager.m in Sources */,
+				811CE3E518C33DD800880C36 /* SkyEyeGimbalManager.m in Sources */,
+				09F6B8E718C407F4000513DA /* BeaconReading.m in Sources */,
+				09F6B8E918C407F4000513DA /* SkyEyeDroneManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +530,14 @@
 				8188469918C26ACE00590ECA /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C5EFF6F818C3DE540012113E /* Main-iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5EFF6F918C3DE540012113E /* Base */,
+			);
+			name = "Main-iPad.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -611,25 +629,18 @@
 					gimbalSDK/ContextCore.embeddedframework,
 					gimbalSDK/ContextLocation.embeddedframework,
 					gimbalSDK/NetworkServices.embeddedframework,
-					../ARDrone_SDK_2_0_1/ARDroneLib,
-					../ARDrone_SDK_2_0_1/ControlEngine/iPhone,
+					/Users/arpanghosh/Developer/iOS/SkyEye/gimbalSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/BButton\"",
-					"\"${PODS_ROOT}/Headers/SocketRocket\"",
-					"\"${PODS_ROOT}/Headers/socket.IO\"",
-					../ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release,
-				);
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/charliefederspiel/projects/ibeacon/ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -647,25 +658,18 @@
 					gimbalSDK/ContextCore.embeddedframework,
 					gimbalSDK/ContextLocation.embeddedframework,
 					gimbalSDK/NetworkServices.embeddedframework,
-					../ARDrone_SDK_2_0_1/ARDroneLib,
-					../ARDrone_SDK_2_0_1/ControlEngine/iPhone,
+					/Users/arpanghosh/Developer/iOS/SkyEye/gimbalSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers\"",
-					"\"${PODS_ROOT}/Headers/BButton\"",
-					"\"${PODS_ROOT}/Headers/SocketRocket\"",
-					"\"${PODS_ROOT}/Headers/socket.IO\"",
-					../ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release,
-				);
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/charliefederspiel/projects/ibeacon/ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

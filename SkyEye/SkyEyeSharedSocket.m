@@ -28,16 +28,26 @@
 
 - (id)init {
     if (self = [super init]) {
+    }
+    return self;
+}
+
+-(SocketIO *)socket{
+    if (!_socket || !_socket.isConnected) {
         _socket = [[SocketIO alloc] initWithDelegate:Nil];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString *nodeIP = [defaults objectForKey:@"sky_eye_node_ip"];
         [_socket connectToHost:nodeIP onPort:SKYEYE_NODE_CONTROLLER_PORT];
     }
-    return self;
+    return _socket;
 }
 
 -(void)sendEvent:(NSString *)eventName withData:(NSDictionary *)data{
     [self.socket sendEvent:eventName withData:data];
+}
+
+-(void)disconnect{
+    [self.socket disconnect];
 }
 
 @end

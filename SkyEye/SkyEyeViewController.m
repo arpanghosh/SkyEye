@@ -45,10 +45,11 @@
     if ([self.nodeIPAddress.text isValidIPAddress]) {
         [defaults setValue:self.nodeIPAddress.text forKey:@"sky_eye_node_ip"];
         [self updateUIForPilotingDrone];
+        [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"startDrone" withData:nil];
         [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] startSightingGimbalBeaconsWithDelagate:self
                                                                                andSmoothingMode:self.beaconSmoothingMode];
-        [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] startTrackingUserStepCountWithDelegate:self];
-        [[SkyEyeHeadingManager sharedSkyEyeHeadingManager] startTrackingHeadingWithDelegate:self];
+        //[[SkyEyeStepCountManager sharedSkyEyeStepCountManager] startTrackingUserStepCountWithDelegate:self];
+        //[[SkyEyeHeadingManager sharedSkyEyeHeadingManager] startTrackingHeadingWithDelegate:self];
     }else{
         dispatch_async(dispatch_get_main_queue(), ^{
             self.nodeIPAddress.text = @"Invalid IP Address";
@@ -58,10 +59,15 @@
 }
 
 - (IBAction)stopDrone {
-    //Send killswitch event on socket
-    [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] stopSightingGimbalBeacons];
-    [[SkyEyeStepCountManager sharedSkyEyeStepCountManager] stopTrackingUserStepCount];
-    [[SkyEyeHeadingManager sharedSkyEyeHeadingManager] stopTrackingHeading];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] stopSightingGimbalBeacons];
+    });
+    
+    //[[SkyEyeStepCountManager sharedSkyEyeStepCountManager] stopTrackingUserStepCount];
+    //[[SkyEyeHeadingManager sharedSkyEyeHeadingManager] stopTrackingHeading];
+    [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stopDrone" withData:nil];
+    [[SkyEyeSharedSocket getSharedSkyEyeSocket] disconnect];
     [self updateUIForConfig];
 }
 
@@ -175,8 +181,8 @@
     [self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching step count : %@", error.localizedDescription]];
 }
 
--(void)headingUpdated:(CLHeading *)heading timestamp:(NSDate *)timestamp{
-    [self updateStatusWithMessage:[NSString stringWithFormat:@"heading updated : %f", heading.magneticHeading]];
+-(void)headingUpdated:(double )heading timestamp:(NSDate *)timestamp{
+    //[self updateStatusWithMessage:[NSString stringWithFormat:@"heading updated : %f", heading]];
     
     /*
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -187,7 +193,7 @@
 }
 
 -(void)errorFetchingHeading:(NSError *)error{
-    [self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching heading : %@", error.localizedDescription]];
+    //[self updateStatusWithMessage:[NSString stringWithFormat:@"Error fetching heading : %@", error.localizedDescription]];
 }
 
 
