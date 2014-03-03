@@ -14,7 +14,7 @@
 
 @interface FiniteStateMachine : NSObject <NSXMLParserDelegate>
 {
-    id delegate;
+    //id delegate;
     
     unsigned int statesCount;
     unsigned int actionsCount;

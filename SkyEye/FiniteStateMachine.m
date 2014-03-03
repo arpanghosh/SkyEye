@@ -65,12 +65,12 @@ typedef enum
 - (void)dealloc
 {
 	[states removeAllObjects];
-	[states release];
+	//[states release];
 	
 	[actions removeAllObjects];
-	[actions release];
+	//[actions release];
 	
-	[super dealloc];
+	//[super dealloc];
 }
 
 @end
@@ -86,7 +86,7 @@ typedef enum
 {
     FiniteStateMachine *fsm = [[FiniteStateMachine alloc] init];
     
-    return [fsm autorelease];
+    return fsm;
 }
 
 + (id) fsmWithXML:(NSString *)fileName
@@ -104,12 +104,12 @@ typedef enum
 	else
 		NSLog(@"XML parsing OK!");
 	
-	[xml release];
+	//[xml release];
 	
-	[fsm->xml release];
+	//[fsm->xml release];
 	fsm->xml = nil;
     
-    return [fsm autorelease];
+    return fsm;
 }
 
 - (id) init
@@ -139,22 +139,22 @@ typedef enum
 - (void) dealloc
 {
     [objects removeAllObjects];
-    [objects release];
+    //[objects release];
     objects = nil;
     
     [enterCallbacks removeAllObjects];
-    [enterCallbacks release];
+    //[enterCallbacks release];
     enterCallbacks = nil;
     
     [quitCallbacks removeAllObjects];
-    [quitCallbacks release];
+    //[quitCallbacks release];
     quitCallbacks = nil;
     
     [stateActions removeAllObjects];
-    [stateActions release];
+    //[stateActions release];
     stateActions = nil;
     
-    [super dealloc];
+    //[super dealloc];
 }
 
 // Current State getter
