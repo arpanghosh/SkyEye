@@ -7,18 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ARDroneEngine/ARDroneProtocols.h"
+#import "ARDrone.h"
+#import "ARDroneProtocols.h"
+#import "ARDroneAcademy.h"
 
 @interface SkyEyeDroneManager : NSObject <ARDroneProtocolIn, ARDroneProtocolOut, ARDroneAcademyDelegate>
-{
-    
-    ARDrone							*drone;
-	id<ARDroneProtocolIn>			delegate;
-    
-    //FiniteStateMachine              *fsm;
-    
-    ardrone_info_t                  *ardrone_info;
-}
 //@property (nonatomic, retain) FiniteStateMachine *fsm;
 
 @property (nonatomic, assign) ARDrone *drone;

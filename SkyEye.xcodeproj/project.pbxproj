@@ -14,6 +14,7 @@
 		097341EE18C3C01600D22321 /* SkyEyeHeadingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341E518C3C01600D22321 /* SkyEyeHeadingManager.m */; };
 		097341EF18C3C01600D22321 /* BeaconReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341E718C3C01600D22321 /* BeaconReading.m */; };
 		097341F018C3C01600D22321 /* SkyEyeDroneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 097341E918C3C01600D22321 /* SkyEyeDroneManager.m */; };
+		09F6B8DB18C3F98B000513DA /* libARDroneEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F6B8DA18C3F98B000513DA /* libARDroneEngine.a */; };
 		811CE3D918C2E65E00880C36 /* SkyEyeStepCountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3D818C2E65E00880C36 /* SkyEyeStepCountManager.m */; };
 		811CE3DF18C2EA3E00880C36 /* SkyEyeSharedSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 811CE3DE18C2EA3E00880C36 /* SkyEyeSharedSocket.m */; };
 		8188467118C26ACE00590ECA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8188467018C26ACE00590ECA /* Foundation.framework */; };
@@ -70,6 +71,7 @@
 		097341E718C3C01600D22321 /* BeaconReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconReading.m; sourceTree = "<group>"; };
 		097341E818C3C01600D22321 /* SkyEyeDroneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeDroneManager.h; sourceTree = "<group>"; };
 		097341E918C3C01600D22321 /* SkyEyeDroneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkyEyeDroneManager.m; sourceTree = "<group>"; };
+		09F6B8DA18C3F98B000513DA /* libARDroneEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libARDroneEngine.a; path = ../ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release/libARDroneEngine.a; sourceTree = "<group>"; };
 		3C926899359542FB82F160FB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7DD919BA653B4A3DBA897F15 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		811CE3D618C2E65E00880C36 /* SkyEyeMotionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyEyeMotionDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09F6B8DB18C3F98B000513DA /* libARDroneEngine.a in Frameworks */,
 				C57810B918C29A9D0018AFDF /* Common.framework in Frameworks */,
 				C57810BE18C29A9D0018AFDF /* NetworkServices.framework in Frameworks */,
 				C57810BB18C29A9D0018AFDF /* ContextLocation.framework in Frameworks */,
@@ -169,6 +172,7 @@
 		8188466F18C26ACE00590ECA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09F6B8DA18C3F98B000513DA /* libARDroneEngine.a */,
 				C57810AB18C29A9D0018AFDF /* Common.embeddedframework */,
 				C57810AE18C29A9D0018AFDF /* ContextCore.embeddedframework */,
 				C57810B118C29A9D0018AFDF /* ContextLocation.embeddedframework */,
@@ -601,11 +605,25 @@
 					gimbalSDK/ContextCore.embeddedframework,
 					gimbalSDK/ContextLocation.embeddedframework,
 					gimbalSDK/NetworkServices.embeddedframework,
+					../ARDrone_SDK_2_0_1/ARDroneLib,
+					../ARDrone_SDK_2_0_1/ControlEngine/iPhone,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/BButton\"",
+					"\"${PODS_ROOT}/Headers/SocketRocket\"",
+					"\"${PODS_ROOT}/Headers/socket.IO\"",
+					../ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release,
+				);
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/charliefederspiel/projects/ibeacon/ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -623,11 +641,25 @@
 					gimbalSDK/ContextCore.embeddedframework,
 					gimbalSDK/ContextLocation.embeddedframework,
 					gimbalSDK/NetworkServices.embeddedframework,
+					../ARDrone_SDK_2_0_1/ARDroneLib,
+					../ARDrone_SDK_2_0_1/ControlEngine/iPhone,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SkyEye/SkyEye-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/BButton\"",
+					"\"${PODS_ROOT}/Headers/SocketRocket\"",
+					"\"${PODS_ROOT}/Headers/socket.IO\"",
+					../ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release,
+				);
 				INFOPLIST_FILE = "SkyEye/SkyEye-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/charliefederspiel/projects/ibeacon/ARDrone_SDK_2_0_1/ControlEngine/iPhone/Release,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
