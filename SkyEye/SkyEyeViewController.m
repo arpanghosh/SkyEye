@@ -61,7 +61,10 @@
 
 - (IBAction)stopDrone {
     
-    [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] stopSightingGimbalBeacons];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [[SkyEyeGimbalManager sharedSkyEyeGimbalManager] stopSightingGimbalBeacons];
+    });
+    
     //[[SkyEyeStepCountManager sharedSkyEyeStepCountManager] stopTrackingUserStepCount];
     //[[SkyEyeHeadingManager sharedSkyEyeHeadingManager] stopTrackingHeading];
     [[SkyEyeSharedSocket getSharedSkyEyeSocket] sendEvent:@"stopDrone" withData:nil];
